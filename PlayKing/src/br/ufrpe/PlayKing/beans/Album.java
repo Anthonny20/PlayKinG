@@ -8,6 +8,21 @@ public class Album {
 	private Artista artistaAlbum;
 	private ArrayList<Musica> musicasAlbum;
 	
+	public Album() {}
+	
+	public Album(String nomeAlbum, Artista artistaAlbum) {
+		
+		this.nomeAlbum = nomeAlbum;
+		this.artistaAlbum = artistaAlbum;
+		
+	}
+	
+	public void adicionarMusica() {
+		
+	}
+	public void removerMusica() {
+		
+	}
 	public String getNomeAlbum() {
 		return nomeAlbum;
 	}

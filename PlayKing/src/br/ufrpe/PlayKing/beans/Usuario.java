@@ -10,6 +10,16 @@ public class Usuario {
 	private int musicasUsuario;
 	private double totalUsuario;
 	
+	public Usuario() {}
+	public Usuario(String nomeUsuario, String loginUsuario, String senhaUsuario, int musicasUsuario,
+			double totalUsuario) {
+		super();
+		this.nomeUsuario = nomeUsuario;
+		this.loginUsuario = loginUsuario;
+		this.senhaUsuario = senhaUsuario;
+		this.musicasUsuario = musicasUsuario;
+		this.totalUsuario = totalUsuario;
+	}
 	public String getNomeUsuario() {
 		return nomeUsuario;
 	}

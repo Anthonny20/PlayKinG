@@ -7,6 +7,13 @@ public class PlayList {
 	private Usuario usuarioPlaylist;
 	private ArrayList<Musica> usuarioMusicas;
 	
+	
+	
+	public PlayList(Usuario usuarioPlaylist, ArrayList<Musica> usuarioMusicas) {
+		super();
+		this.usuarioPlaylist = usuarioPlaylist;
+		this.usuarioMusicas = usuarioMusicas;
+	}
 	public Usuario getUsuarioPlaylist() {
 		return usuarioPlaylist;
 	}

@@ -8,7 +8,15 @@ public class Musica {
 	private Album albumMusica;
 	private Artista artistaMusica;
 	
-	
+	public Musica() {}
+	public Musica(String nomeMusica, String tempoMusica, double precoMusica, Album albumMusica, Artista artistaMusica) {
+		super();
+		this.nomeMusica = nomeMusica;
+		this.tempoMusica = tempoMusica;
+		this.precoMusica = precoMusica;
+		this.albumMusica = albumMusica;
+		this.artistaMusica = artistaMusica;
+	}
 	public String getNomeMusica() {
 		return nomeMusica;
 	}
