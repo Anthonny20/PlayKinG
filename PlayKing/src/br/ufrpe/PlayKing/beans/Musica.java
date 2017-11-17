@@ -5,16 +5,17 @@ public class Musica {
 	private String nomeMusica;
 	private String tempoMusica;
 	private double precoMusica;
-	private Album albumMusica;
 	private Artista artistaMusica;
+	private int musicasVendidas;//QUANTIDADE DE VEZES QUE DETERMINADA MUSICA FOI VENDIDA
+	private String historicoMusica;//MOSTRARÁ OS USUARIOS QUE COMPRARAM AS MUSICAS
+	private double ganhosMusica;//UMA CERTA PORCENTAGEM DO LUCRO DA MUSICA IRÁ PARA O SETOR DE VENDAS E OUTRA PARTE FICARÁ PARA O ARTISTA.
 	
-	public Musica() {}
-	public Musica(String nomeMusica, String tempoMusica, double precoMusica, Album albumMusica, Artista artistaMusica) {
+
+	public Musica(String nomeMusica, String tempoMusica, double precoMusica,  Artista artistaMusica) {
 		super();
 		this.nomeMusica = nomeMusica;
 		this.tempoMusica = tempoMusica;
 		this.precoMusica = precoMusica;
-		this.albumMusica = albumMusica;
 		this.artistaMusica = artistaMusica;
 	}
 	public String getNomeMusica() {
@@ -35,18 +36,16 @@ public class Musica {
 	public void setPrecoMusica(double precoMusica) {
 		this.precoMusica = precoMusica;
 	}
-	public Album getAlbumMusica() {
-		return albumMusica;
-	}
-	public void setAlbumMusica(Album albumMusica) {
-		this.albumMusica = albumMusica;
-	}
+	
 	public Artista getArtistaMusica() {
 		return artistaMusica;
 	}
 	public void setArtistaMusica(Artista artistaMusica) {
 		this.artistaMusica = artistaMusica;
 	}
+	@Override
+	public String toString() {
+		return "\nNome da musica :"+this.getNomeMusica(); 
 
 	
-}
+}}
