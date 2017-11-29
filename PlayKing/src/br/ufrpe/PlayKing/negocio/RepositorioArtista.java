@@ -1,5 +1,7 @@
 package br.ufrpe.PlayKing.negocio;
 
-public class RepositorioArtista {
+import br.ufrpe.PlayKing.beans.Artista;
+
+public class RepositorioArtista extends RepositorioGenerico<Artista> {
 
 }

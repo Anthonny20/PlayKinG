@@ -5,8 +5,8 @@ public class Artista {
 	private String nomeArtista;
 	private Album albunsArtista;
 	private Musica musicasArtista;
-	private String artistaVendas;//MOSTRARA AS VENDAS DO ARTISTA SENDO O ALBÚM COMPLETO OU SÓ UMA MÚSICA
-	private double ganhosArtista;//
+	//private String artistaVendas;//MOSTRARA AS VENDAS DO ARTISTA SENDO O ALBÚM COMPLETO OU SÓ UMA MÚSICA
+	//private double ganhosArtista;//
 	
 	public Artista(String nomeArtista) {	
 		this.nomeArtista = nomeArtista;
@@ -36,6 +36,35 @@ public class Artista {
 	public String toString() {
 		return "Nome do artista:\n"+this.nomeArtista;
 	}
+
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Artista other = (Artista) obj;
+		if (albunsArtista == null) {
+			if (other.albunsArtista != null)
+				return false;
+		} else if (!albunsArtista.equals(other.albunsArtista))
+			return false;
+		if (musicasArtista == null) {
+			if (other.musicasArtista != null)
+				return false;
+		} else if (!musicasArtista.equals(other.musicasArtista))
+			return false;
+		if (nomeArtista == null) {
+			if (other.nomeArtista != null)
+				return false;
+		} else if (!nomeArtista.equals(other.nomeArtista))
+			return false;
+		return true;
+	}
+	
 	
 	
 	

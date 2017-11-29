@@ -11,8 +11,8 @@ public class Usuario {
 	private String senhaUsuario;
 	private Musica [] playListUsuario;
 	private int proxima;
-	private String historicoComprasUsuario;//Será usado mais pra frente.
-	private double gastosUsuario;//Será usado mais pra frente.
+	//private String historicoComprasUsuario;//Será usado mais pra frente.
+	//private double gastosUsuario;//Será usado mais pra frente.
 	
 	// FAZER TIPOS DE USARIOS 
 	public Usuario(String nomeUsuario, String loginUsuario, String senhaUsuario, Musica[] playListUsuario) {
@@ -57,6 +57,37 @@ public class Usuario {
 	@Override
 	public String toString() {
 		return "Usuario [nomeUsuario=" + nomeUsuario + ", playListUsuario=" + Arrays.toString(playListUsuario);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Usuario other = (Usuario) obj;
+		if (loginUsuario == null) {
+			if (other.loginUsuario != null)
+				return false;
+		} else if (!loginUsuario.equals(other.loginUsuario))
+			return false;
+		if (nomeUsuario == null) {
+			if (other.nomeUsuario != null)
+				return false;
+		} else if (!nomeUsuario.equals(other.nomeUsuario))
+			return false;
+		if (!Arrays.equals(playListUsuario, other.playListUsuario))
+			return false;
+		if (proxima != other.proxima)
+			return false;
+		if (senhaUsuario == null) {
+			if (other.senhaUsuario != null)
+				return false;
+		} else if (!senhaUsuario.equals(other.senhaUsuario))
+			return false;
+		return true;
 	}
 	
 
