@@ -3,8 +3,8 @@ package br.ufrpe.PlayKing.beans;
 public class Artista {
 	
 	private String nomeArtista;
-	private Album albunsArtista;
-	private Musica musicasArtista;
+	//private Album albunsArtista;
+	//private Musica musicasArtista;
 	//private String artistaVendas;//MOSTRARA AS VENDAS DO ARTISTA SENDO O ALBÚM COMPLETO OU SÓ UMA MÚSICA
 	//private double ganhosArtista;//
 	
