@@ -1,7 +1,7 @@
 package br.ufrpe.PlayKing.beans;
 
 public class Musica {
-	
+
 	private String nomeMusica;
 	private String tempoMusica;
 	private double precoMusica;
@@ -9,7 +9,7 @@ public class Musica {
 	//private int musicasVendidas;//QUANTIDADE DE VEZES QUE DETERMINADA MUSICA FOI VENDIDA
 	//private String historicoMusica;//MOSTRARÁ OS USUARIOS QUE COMPRARAM AS MUSICAS
 	//private double ganhosMusica;//UMA CERTA PORCENTAGEM DO LUCRO DA MUSICA IRÁ PARA O SETOR DE VENDAS E OUTRA PARTE FICARÁ PARA O ARTISTA.
-	
+
 
 	public Musica(String nomeMusica, String tempoMusica, double precoMusica,  Artista artistaMusica) {
 		super();
@@ -36,7 +36,7 @@ public class Musica {
 	public void setPrecoMusica(double precoMusica) {
 		this.precoMusica = precoMusica;
 	}
-	
+
 	public Artista getArtistaMusica() {
 		return artistaMusica;
 	}
@@ -47,8 +47,8 @@ public class Musica {
 	public String toString() {
 		return "\nNome da musica :"+this.getNomeMusica(); 
 
-	
-}
+
+	}
 
 	@Override
 	public boolean equals(Object obj) {

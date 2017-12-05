@@ -1,12 +1,12 @@
 package br.ufrpe.PlayKing.beans;
 
 public class Vendas {
-	
+
 	private String historicoVendas;//MOSTRARÁ TODAS AS VENDAS EM GERAL.
 	private double totalGanhosVendas;//MOSTRARÁ O LUCRO TOTAL, GANHO COM ÀS MUSÍCAS E COM OS ALBÚNS VENDIDOS MAS A POR TIPO DE USUÁRIO.
 	private int quantidadeMusicasVendidas;//TODAS AS MUSICAS EM GERAL
 	private int quantidadeAlbunsVendidos;//TODOS OS ALBÚNS EM GERAL
-	
+
 	public Vendas(String historicoVendas, double totalGanhosVendas, int quantidadeMusicasVendidas,
 			int quantidadeAlbunsVendidos) {
 		super();
@@ -47,11 +47,11 @@ public class Vendas {
 	public void setQuantidadeAlbunsVendidos(int quantidadeAlbunsVendidos) {
 		this.quantidadeAlbunsVendidos = quantidadeAlbunsVendidos;
 	}
-	
-	
-	
-	
 
-	
+
+
+
+
+
 
 }

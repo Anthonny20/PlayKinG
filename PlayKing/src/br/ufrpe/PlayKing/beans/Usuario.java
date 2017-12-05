@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 
 public class Usuario {
-	
+
 	private String nomeUsuario;
 	private String loginUsuario;
 	private String senhaUsuario;
@@ -13,7 +13,7 @@ public class Usuario {
 	private int proxima;
 	//private String historicoComprasUsuario;//Será usado mais pra frente.
 	//private double gastosUsuario;//Será usado mais pra frente.
-	
+
 	// FAZER TIPOS DE USARIOS 
 	public Usuario(String nomeUsuario, String loginUsuario, String senhaUsuario, Musica[] playListUsuario) {
 		super();
@@ -23,10 +23,10 @@ public class Usuario {
 		this.playListUsuario = new Musica[10];//LIMITANDO TAMANHO DE PLAYLIST
 	}
 	public void adicionarMusicaPlay(Musica musicaPlay) {//METODO CRIADO SÓ PRA TESTE
-	
-			this.playListUsuario[this.proxima] = musicaPlay;
-			this.proxima = this.proxima +1;
-		}
+
+		this.playListUsuario[this.proxima] = musicaPlay;
+		this.proxima = this.proxima +1;
+	}
 	/*public void setPlayListUsuario(ArrayList<Musica> playListUsuario) {
 		this.playListUsuario = playListUsuario;
 	}*/
@@ -89,6 +89,6 @@ public class Usuario {
 			return false;
 		return true;
 	}
-	
+
 
 }

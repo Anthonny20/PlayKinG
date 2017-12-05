@@ -1,30 +1,41 @@
 package br.ufrpe.PlayKing.beans;
-
+//CLASSE FICOU OBSOLETA? JÁ QUE ESTOU CRINADO A PLAYSLIST , COMO UM ARRAY DE MUSICAS NA CLASSE USUARIO.
 import java.util.ArrayList;
 
 public class PlayList {
 
-	private Usuario usuarioPlaylist;
+	private String namePlayList;
 	private ArrayList<Musica> usuarioMusicas;
-	
-	
-	
-	public PlayList(Usuario usuarioPlaylist, ArrayList<Musica> usuarioMusicas) {
-		super();
-		this.usuarioPlaylist = usuarioPlaylist;
+	private Usuario usuarioPlayList;
+
+
+
+	public PlayList(String namePlayList, ArrayList<Musica> usuarioMusicas) {
+
+		this.namePlayList = namePlayList;
 		this.usuarioMusicas = usuarioMusicas;
 	}
-	public Usuario getUsuarioPlaylist() {
-		return usuarioPlaylist;
+	
+	public Usuario getUsuarioPlayList() {
+		return usuarioPlayList;
 	}
-	public void setUsuarioPlaylist(Usuario usuarioPlaylist) {
-		this.usuarioPlaylist = usuarioPlaylist;
+
+	public void setUsuarioPlayList(Usuario usuarioPlayList) {
+		this.usuarioPlayList = usuarioPlayList;
 	}
+
 	public ArrayList<Musica> getUsuarioMusicas() {
 		return usuarioMusicas;
+	}
+	public String getNamePlayList() {
+		return namePlayList;
+	}
+	public void setNamePlayList(String namePlayList) {
+		this.namePlayList = namePlayList;
 	}
 	public void setUsuarioMusicas(ArrayList<Musica> usuarioMusicas) {
 		this.usuarioMusicas = usuarioMusicas;
 	}
-	
+
+
 }

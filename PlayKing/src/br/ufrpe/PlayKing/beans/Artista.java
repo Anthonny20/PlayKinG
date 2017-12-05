@@ -1,35 +1,30 @@
 package br.ufrpe.PlayKing.beans;
 
 public class Artista {
-	
+
 	private String nomeArtista;
-	//private Album albunsArtista;
-	//private Musica musicasArtista;
-	//private String artistaVendas;//MOSTRARA AS VENDAS DO ARTISTA SENDO O ALBÚM COMPLETO OU SÓ UMA MÚSICA
-	//private double ganhosArtista;//
-	
-	public Artista(String nomeArtista) {	
+	private int idadeArtista;
+
+
+	public Artista(String nomeArtista,int idadeArtista) {	
 		this.nomeArtista = nomeArtista;
+		this.idadeArtista = idadeArtista;
 	} 
-	
+
 	public String getNomeArtista() {
 		return nomeArtista;
 	}
 	public void setNomeArtista(String nomeArtista) {
 		this.nomeArtista = nomeArtista;
 	}
-	public Album getAlbunsArtista() {
-		return albunsArtista;
+
+
+	public int getIdadeArtista() {
+		return idadeArtista;
 	}
-	public Musica getMusicasArtista() {
-		return musicasArtista;
-	}
-	public void setMusicasArtista(Musica musicasArtista) {
-		this.musicasArtista = musicasArtista;
-	}
-	
-	public void setAlbunsArtista(Album albunsArtista) {
-		this.albunsArtista = albunsArtista;
+
+	public void setIdadeArtista(int idadeArtista) {
+		this.idadeArtista = idadeArtista;
 	}
 
 	@Override
@@ -37,7 +32,6 @@ public class Artista {
 		return "Nome do artista:\n"+this.nomeArtista;
 	}
 
-	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -47,15 +41,7 @@ public class Artista {
 		if (getClass() != obj.getClass())
 			return false;
 		Artista other = (Artista) obj;
-		if (albunsArtista == null) {
-			if (other.albunsArtista != null)
-				return false;
-		} else if (!albunsArtista.equals(other.albunsArtista))
-			return false;
-		if (musicasArtista == null) {
-			if (other.musicasArtista != null)
-				return false;
-		} else if (!musicasArtista.equals(other.musicasArtista))
+		if (idadeArtista != other.idadeArtista)
 			return false;
 		if (nomeArtista == null) {
 			if (other.nomeArtista != null)
@@ -64,9 +50,10 @@ public class Artista {
 			return false;
 		return true;
 	}
-	
-	
-	
-	
+
+
+
+
+
 
 }

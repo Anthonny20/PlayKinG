@@ -1,4 +1,4 @@
-package br.ufrpe.PlayKing.dados;
+package br.ufrpe.PlayKing.negocio;
 
 public class ControladorArtista {
 

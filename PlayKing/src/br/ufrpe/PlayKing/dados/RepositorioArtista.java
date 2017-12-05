@@ -1,4 +1,4 @@
-package br.ufrpe.PlayKing.negocio;
+package br.ufrpe.PlayKing.dados;
 
 import br.ufrpe.PlayKing.beans.Artista;
 

@@ -1,4 +1,4 @@
-package br.ufrpe.PlayKing.negocio;
+package br.ufrpe.PlayKing.dados;
 
 import java.util.ArrayList;
 
