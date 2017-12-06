@@ -34,7 +34,7 @@ public class RepositorioAlbum  {
 	}
 	
 	public List<Album>  listarAlbuns() {
-		List todosAlbuns = new ArrayList<>();
+		List <Album>todosAlbuns = new ArrayList<>();
 		for (int i = 0; i < albuns.size(); i++) {
 			 	todosAlbuns.addAll(albuns);
 		}

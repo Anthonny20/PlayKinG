@@ -1,5 +1,5 @@
 package br.ufrpe.PlayKing.negocio;
-
+//TODO CRIAR REGRAS DE NEGOCIO
 import br.ufrpe.PlayKing.beans.Usuario;
 import br.ufrpe.PlayKing.dados.RepositorioUsuario;
 
