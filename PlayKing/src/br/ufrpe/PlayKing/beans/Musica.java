@@ -6,9 +6,7 @@ public class Musica {
 	private String tempoMusica;
 	private double precoMusica;
 	private Artista artistaMusica;
-	//private int musicasVendidas;//QUANTIDADE DE VEZES QUE DETERMINADA MUSICA FOI VENDIDA
-	//private String historicoMusica;//MOSTRARÁ OS USUARIOS QUE COMPRARAM AS MUSICAS
-	//private double ganhosMusica;//UMA CERTA PORCENTAGEM DO LUCRO DA MUSICA IRÁ PARA O SETOR DE VENDAS E OUTRA PARTE FICARÁ PARA O ARTISTA.
+	
 
 
 	public Musica(String nomeMusica, String tempoMusica, double precoMusica,  Artista artistaMusica) {
@@ -43,12 +41,20 @@ public class Musica {
 	public void setArtistaMusica(Artista artistaMusica) {
 		this.artistaMusica = artistaMusica;
 	}
+	
+
 	@Override
 	public String toString() {
-		return "\nNome da musica :"+this.getNomeMusica(); 
-
-
+		
+		
+		return "\nNome da Música : "+this.getNomeMusica()+"\n"+
+			   "Duração da Música : "+this.getTempoMusica()+"\n"+
+			   "Artista : "+this.getArtistaMusica()+"\n"+
+			   "Preço da Música : "+this.getPrecoMusica();
 	}
+
+
+	
 
 	@Override
 	public boolean equals(Object obj) {

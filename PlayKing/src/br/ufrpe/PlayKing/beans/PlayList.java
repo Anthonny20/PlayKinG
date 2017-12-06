@@ -13,7 +13,7 @@ public class PlayList {
 	public PlayList(String namePlayList, ArrayList<Musica> usuarioMusicas) {
 
 		this.namePlayList = namePlayList;
-		this.usuarioMusicas = usuarioMusicas;
+		this.usuarioMusicas = new ArrayList<>();
 	}
 	
 	public Usuario getUsuarioPlayList() {
@@ -36,6 +36,45 @@ public class PlayList {
 	public void setUsuarioMusicas(ArrayList<Musica> usuarioMusicas) {
 		this.usuarioMusicas = usuarioMusicas;
 	}
+
+	
+
+	@Override
+	public String toString() {
+		
+		return "\nNome PlayList : "+this.getNamePlayList()+"\n"+
+				"Usuario PlayList : "+this.getUsuarioPlayList()+"\n"+
+				"Musicas da PlayList : "+this.getUsuarioMusicas();
+	}
+	
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		PlayList other = (PlayList) obj;
+		if (namePlayList == null) {
+			if (other.namePlayList != null)
+				return false;
+		} else if (!namePlayList.equals(other.namePlayList))
+			return false;
+		if (usuarioMusicas == null) {
+			if (other.usuarioMusicas != null)
+				return false;
+		} else if (!usuarioMusicas.equals(other.usuarioMusicas))
+			return false;
+		if (usuarioPlayList == null) {
+			if (other.usuarioPlayList != null)
+				return false;
+		} else if (!usuarioPlayList.equals(other.usuarioPlayList))
+			return false;
+		return true;
+	}
+	
 
 
 }

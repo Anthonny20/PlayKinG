@@ -7,8 +7,8 @@ public class ControladorArtista {
 	
 	private RepositorioArtista repoArtista;
 	
-	public ControladorArtista(RepositorioArtista instanciaRepositorio) {
-		this.repoArtista = instanciaRepositorio;
+	public ControladorArtista() {
+		this.repoArtista = RepositorioArtista.getInstance();
 	}
 	
 	public void adicionarArtista(Artista artista) {

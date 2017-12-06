@@ -1,5 +1,7 @@
 package br.ufrpe.PlayKing.beans;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -7,68 +9,97 @@ public class Album {
 
 	private String nomeAlbum;
 	private Artista artistaAlbum;
-	private Musica[] musicasAlbum;
+	private ArrayList<Musica> musicasAlbum;
 	private double precoAlbum;
-	int proxima = 0;//TESTE
+	private LocalDateTime dataAlbum;
 
 
-	public Album(String nomeAlbum, Artista artistaAlbum,int tamanho) {
+
+	public Album(String nomeAlbum, Artista artistaAlbum,LocalDateTime dataAlbum) {
 
 		this.nomeAlbum = nomeAlbum;
 		this.artistaAlbum = artistaAlbum;
-		this.musicasAlbum = new Musica[tamanho];//TESTE
+		this.musicasAlbum = new ArrayList<>();
+		this.dataAlbum = dataAlbum;
 	}
 
-	public void adicionarMusica(Musica musica) {//METODO CRIADO PRA TESTE
-		this.musicasAlbum[proxima] = musica;
-		this.proxima = this.proxima+1;	
-	}
-
+	
+	
 	public String getNomeAlbum() {
 		return nomeAlbum;
 	}
+	
 	public void setNomeAlbum(String nomeAlbum) {
 		this.nomeAlbum = nomeAlbum;
 	}
+	
 	public Artista getArtistaAlbum() {
 		return artistaAlbum;
 	}
+	
 	public void setArtistaAlbum(Artista artistaAlbum) {
 		this.artistaAlbum = artistaAlbum;
 	}
 
-	public Musica[] getMusicasAlbum() {
+	public double getPrecoAlbum() {
+		double total =0;
+		for (int i = 0; i < musicasAlbum.size(); i++) {
+			total = total + musicasAlbum.get(i).getPrecoMusica();
+			
+		}return total;
+	}
+
+	
+	public ArrayList<Musica> getMusicasAlbum() {
 		return musicasAlbum;
 	}
 
-	public void setMusicasAlbum(Musica[] musicasAlbum) {
+
+	public void setMusicasAlbum(ArrayList<Musica> musicasAlbum) {
 		this.musicasAlbum = musicasAlbum;
 	}
 
-	public double getPrecoAlbum() {
-		return precoAlbum;
-	}
-
-	public void setPrecoAlbum(double precoAlbum) {
-		this.precoAlbum = precoAlbum;
+	public void adicionarMusica(Musica musica) {
+		this.musicasAlbum.add(musica);
 	}
 
 	@Override
 	public String toString() {
-		return "Nome do Album: "+this.getNomeAlbum()+"\nNome do artista:"+this.artistaAlbum.getNomeArtista()+"\nMusicas do album"+ Arrays.toString(musicasAlbum);
-
+		
+		return "\nNome do Album : " +this.getNomeAlbum()+"\n"+
+			   "Musicas do album : "+this.getMusicasAlbum()+"\n"+
+			   "Preço do album : "+this.getPrecoAlbum();
 	}
-
-
 
 	@Override
 	public boolean equals(Object obj) {
-		boolean r =false;
-		if(obj instanceof Album && ((Album)obj).getArtistaAlbum().equals(artistaAlbum)&& ((Album)obj).getNomeAlbum().equals(nomeAlbum) ) {
-			r=true;
-
-		}return r;
-
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Album other = (Album) obj;
+		if (artistaAlbum == null) {
+			if (other.artistaAlbum != null)
+				return false;
+		} else if (!artistaAlbum.equals(other.artistaAlbum))
+			return false;
+		if (musicasAlbum == null) {
+			if (other.musicasAlbum != null)
+				return false;
+		} else if (!musicasAlbum.equals(other.musicasAlbum))
+			return false;
+		if (nomeAlbum == null) {
+			if (other.nomeAlbum != null)
+				return false;
+		} else if (!nomeAlbum.equals(other.nomeAlbum))
+			return false;
+		if (Double.doubleToLongBits(precoAlbum) != Double.doubleToLongBits(other.precoAlbum))
+			return false;
+		return true;
 	}
+
+
 
 }

@@ -9,27 +9,23 @@ public class Usuario {
 	private String nomeUsuario;
 	private String loginUsuario;
 	private String senhaUsuario;
-	private Musica [] playListUsuario;
-	private int proxima;
-	//private String historicoComprasUsuario;//Será usado mais pra frente.
-	//private double gastosUsuario;//Será usado mais pra frente.
-
-	// FAZER TIPOS DE USARIOS 
-	public Usuario(String nomeUsuario, String loginUsuario, String senhaUsuario, Musica[] playListUsuario) {
-		super();
+	private ArrayList<Musica> musicasUsuario;
+	private ArrayList<Usuario> usuarios;
+	private double creditoUsuario;
+	 
+	
+	
+	public Usuario(String nomeUsuario, String loginUsuario, String senhaUsuario) {
+		
 		this.nomeUsuario = nomeUsuario;
+		
 		this.loginUsuario = loginUsuario;
 		this.senhaUsuario = senhaUsuario;
-		this.playListUsuario = new Musica[10];//LIMITANDO TAMANHO DE PLAYLIST
+		this.musicasUsuario = new ArrayList<>();
+		this.usuarios = new ArrayList<>();
+		this.creditoUsuario = 0;
+		
 	}
-	public void adicionarMusicaPlay(Musica musicaPlay) {//METODO CRIADO SÓ PRA TESTE
-
-		this.playListUsuario[this.proxima] = musicaPlay;
-		this.proxima = this.proxima +1;
-	}
-	/*public void setPlayListUsuario(ArrayList<Musica> playListUsuario) {
-		this.playListUsuario = playListUsuario;
-	}*/
 	public String getNomeUsuario() {
 		return nomeUsuario;
 	}
@@ -39,26 +35,50 @@ public class Usuario {
 	public String getLoginUsuario() {
 		return loginUsuario;
 	}
-	public void setLoginUsuario(String loginUsuario) {
-		this.loginUsuario = loginUsuario;
-	}
+	
+	/*public boolean usuarioNomeExiste(String loginNome) {
+		boolean existe = false;
+		for (int i = 0; i < usuarios.size(); i++) {
+			if (usuarios.get(i).getLoginUsuario().equals(loginNome)) {
+				existe = true;
+			}
+			
+		}return existe
+	}*/
 	public String getSenhaUsuario() {
 		return senhaUsuario;
 	}
 	public void setSenhaUsuario(String senhaUsuario) {
 		this.senhaUsuario = senhaUsuario;
 	}
-	public Musica[] getPlayListUsuario() {
-		return playListUsuario;
+	
+	public ArrayList<Musica> getMusicasUsuario() {
+		return musicasUsuario;
 	}
-	public void setPlayListUsuario(Musica[] playListUsuario) {
-		this.playListUsuario = playListUsuario;
+	public void setMusicasUsuario(ArrayList<Musica> musicasUsuario) {
+		this.musicasUsuario = musicasUsuario;
 	}
+	
+
+	
+	public double getCreditoUsuario() {
+		return creditoUsuario;
+	}
+	public void creditarUsuario(double credito) {
+		if(usuarios!= null) {
+			for (int i = 0; i < usuarios.size(); i++) {
+				
+			}
+		}
+	}
+	
 	@Override
 	public String toString() {
-		return "Usuario [nomeUsuario=" + nomeUsuario + ", playListUsuario=" + Arrays.toString(playListUsuario);
+		
+		return "\nNome Usuario : "+this.getNomeUsuario()+"\n"+
+				"Todas Musicas : "+this.getMusicasUsuario()+"\n";
+				
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -78,10 +98,7 @@ public class Usuario {
 				return false;
 		} else if (!nomeUsuario.equals(other.nomeUsuario))
 			return false;
-		if (!Arrays.equals(playListUsuario, other.playListUsuario))
-			return false;
-		if (proxima != other.proxima)
-			return false;
+		
 		if (senhaUsuario == null) {
 			if (other.senhaUsuario != null)
 				return false;

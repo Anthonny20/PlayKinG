@@ -1,6 +1,7 @@
 package br.ufrpe.PlayKing.dados;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import br.ufrpe.PlayKing.beans.Usuario;
@@ -39,6 +40,14 @@ public class RepositorioUsuario  {
 				this.usuarios.set(i, usuario);
 			}
 		}
+	}
+	public Usuario procurarUsuario(String login) {
+		Usuario achado = null;
+		for (Usuario usuario : usuarios) {
+			if(this.usuarios.contains(usuario) ){
+				achado = usuario;
+			}
+		}return achado;
 	}
 
 }

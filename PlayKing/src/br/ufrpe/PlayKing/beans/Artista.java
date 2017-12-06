@@ -29,7 +29,8 @@ public class Artista {
 
 	@Override
 	public String toString() {
-		return "Nome do artista:\n"+this.nomeArtista;
+		return "\nNome do artista : "+this.getNomeArtista()+"\n"+
+				"Idade artista : "+this.getIdadeArtista();
 	}
 
 	@Override

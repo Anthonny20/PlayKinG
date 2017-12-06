@@ -9,8 +9,8 @@ public class ControladorMusica {
 
 	private RepositorioMusica repoMusica;
 
-	public ControladorMusica(RepositorioMusica instanciaRepositorio) {
-		this.repoMusica = instanciaRepositorio;
+	public ControladorMusica() {
+		this.repoMusica = RepositorioMusica.getInstance();
 	}
 	
 	public void adicionarMusica(Musica musica) {
