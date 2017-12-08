@@ -24,4 +24,12 @@ public class ControladorMusica {
 	public List<Musica> buscarMusica(String nome) {
 		return this.repoMusica.buscarNome(nome);
 	}
+
+	public List<Musica> buscarNome(String nomeMusica) {
+		return repoMusica.buscarNome(nomeMusica);
+	}
+
+	public List<Musica> listarTodasMusicas() {
+		return repoMusica.listarTodasMusicas();
+	}
 }

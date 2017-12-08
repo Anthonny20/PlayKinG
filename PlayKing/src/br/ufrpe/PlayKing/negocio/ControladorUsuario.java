@@ -34,6 +34,7 @@ public class ControladorUsuario {
 				if(auxiliar!=null) {
 					if(auxiliar.getSenhaUsuario().equals(senha)) {
 						loginEfetuado = true;
+						System.out.println("Login efetuado com sucesso\n");
 					}
 					else {
 						System.out.println("Senha incorreta\n");

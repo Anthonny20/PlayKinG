@@ -25,9 +25,9 @@ public class RepositorioAlbum  {
 	public void adicionarAlbum(Album album) {
 		this.albuns.add(album);
 	}
-	public void removerAlbum(Album album) {
+	public void removerAlbum(String nomeAlbum) {
 		for (int i = 0; i < albuns.size(); i++) {
-			if (this.albuns.get(i).equals(album)) {
+			if (this.albuns.get(i).getNomeAlbum().equals(nomeAlbum)) {
 				this.albuns.remove(i);
 			}
 		}
@@ -50,15 +50,31 @@ public class RepositorioAlbum  {
 		}
 	}
 	public void adicionarMusicaAlbum(Album album,Musica musica) {
-		if(album !=null && musica!= null && !this.albuns.contains(musica) ) {
+	
 			for (int i = 0; i < albuns.size(); i++) {
 					if (albuns.get(i).equals(album)) {
 						albuns.get(i).adicionarMusica(musica);
 					}
 					
 			}
-		}
 	}
 	
+	public boolean existeAlbum(Album album) {
+		boolean existe = false;
+		for (int i = 0; i < albuns.size(); i++) {
+			if (albuns.get(i).equals(album)) {
+				existe = true;
+			}
+		}return existe;
+	}
+	public List<Musica> listarMusicasAlbum(Album album){
+		List<Musica> musicasDoAlbum = new ArrayList<Musica>();
+		for (int i = 0; i < albuns.size(); i++) {
+				if (albuns.get(i).equals(album)) {
+					musicasDoAlbum.addAll(albuns.get(i).getMusicasAlbum());
+				}
+		}
+		return musicasDoAlbum;
+	}
 }
 

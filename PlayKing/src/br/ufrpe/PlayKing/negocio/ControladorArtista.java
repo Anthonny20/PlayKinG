@@ -1,5 +1,7 @@
 package br.ufrpe.PlayKing.negocio;
 
+import java.util.List;
+
 import br.ufrpe.PlayKing.beans.Artista;
 import br.ufrpe.PlayKing.dados.RepositorioArtista;
 
@@ -15,8 +17,12 @@ public class ControladorArtista {
 		this.repoArtista.adicionarArtista(artista);
 	}
 	
-	public void removerArtista(Artista artista) {
-		this.repoArtista.removerArtista(artista);
+	public void removerArtista(String nomeArtista) {
+		this.repoArtista.removerArtista(nomeArtista);
+	}
+
+	public List<Artista> listarArtista() {
+		return repoArtista.listarArtista();
 	}
 
 }

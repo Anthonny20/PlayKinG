@@ -44,7 +44,13 @@ public class RepositorioMusica {
 		}
 		return buscaMusicas;
 	}
-	//public listarTodasMusicas
+	public List<Musica> listarTodasMusicas(){
+		List<Musica> todasMusicas = new ArrayList<>();
+		
+		for (Musica musica : todasMusicas) {
+			todasMusicas.addAll(musicas);
+		} return todasMusicas;
+	}
 } 
 
 

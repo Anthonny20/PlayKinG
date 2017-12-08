@@ -16,6 +16,7 @@ public class Musica {
 		this.precoMusica = precoMusica;
 		this.artistaMusica = artistaMusica;
 	}
+	public Musica() {}
 	public String getNomeMusica() {
 		return nomeMusica;
 	}

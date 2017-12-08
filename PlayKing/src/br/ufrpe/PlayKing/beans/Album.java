@@ -22,7 +22,7 @@ public class Album {
 		this.musicasAlbum = new ArrayList<>();
 		this.dataAlbum = dataAlbum;
 	}
-
+	public Album() {}
 	
 	
 	public String getNomeAlbum() {
@@ -63,10 +63,17 @@ public class Album {
 		this.musicasAlbum.add(musica);
 	}
 
+	public LocalDateTime getDataAlbum() {
+		return dataAlbum;
+	}
+	public void setDataAlbum(LocalDateTime dataAlbum) {
+		this.dataAlbum = dataAlbum;
+	}
+	
 	@Override
 	public String toString() {
 		
-		return "\nNome do Album : " +this.getNomeAlbum()+"\n"+
+		return "\nNome do Album : " +this.getNomeAlbum()+"\n"+	
 			   "Musicas do album : "+this.getMusicasAlbum()+"\n"+
 			   "Preço do album : "+this.getPrecoAlbum();
 	}

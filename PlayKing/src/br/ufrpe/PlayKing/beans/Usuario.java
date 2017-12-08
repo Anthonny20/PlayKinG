@@ -72,6 +72,7 @@ public class Usuario {
 		}
 	}
 	
+	
 	@Override
 	public String toString() {
 		

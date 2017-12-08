@@ -5,15 +5,16 @@ import java.util.ArrayList;
 public class PlayList {
 
 	private String namePlayList;
-	private ArrayList<Musica> usuarioMusicas;
+	private ArrayList<Musica> usuarioMusicasPlayList;
 	private Usuario usuarioPlayList;
 
 
 
-	public PlayList(String namePlayList, ArrayList<Musica> usuarioMusicas) {
+	public PlayList(String namePlayList,Usuario usuarioPlayList) {
 
 		this.namePlayList = namePlayList;
-		this.usuarioMusicas = new ArrayList<>();
+		this.usuarioMusicasPlayList = new ArrayList<>();
+		this.usuarioPlayList =  usuarioPlayList;
 	}
 	
 	public Usuario getUsuarioPlayList() {
@@ -25,7 +26,7 @@ public class PlayList {
 	}
 
 	public ArrayList<Musica> getUsuarioMusicas() {
-		return usuarioMusicas;
+		return usuarioMusicasPlayList;
 	}
 	public String getNamePlayList() {
 		return namePlayList;
@@ -34,9 +35,12 @@ public class PlayList {
 		this.namePlayList = namePlayList;
 	}
 	public void setUsuarioMusicas(ArrayList<Musica> usuarioMusicas) {
-		this.usuarioMusicas = usuarioMusicas;
+		this.usuarioMusicasPlayList = usuarioMusicas;
 	}
-
+	
+	public void adicionarMusicaPlayList(Musica musica) {
+		this.usuarioMusicasPlayList.add(musica);
+	}
 	
 
 	@Override
@@ -62,10 +66,10 @@ public class PlayList {
 				return false;
 		} else if (!namePlayList.equals(other.namePlayList))
 			return false;
-		if (usuarioMusicas == null) {
-			if (other.usuarioMusicas != null)
+		if (usuarioMusicasPlayList == null) {
+			if (other.usuarioMusicasPlayList != null)
 				return false;
-		} else if (!usuarioMusicas.equals(other.usuarioMusicas))
+		} else if (!usuarioMusicasPlayList.equals(other.usuarioMusicasPlayList))
 			return false;
 		if (usuarioPlayList == null) {
 			if (other.usuarioPlayList != null)

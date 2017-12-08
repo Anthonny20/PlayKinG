@@ -2,6 +2,8 @@ package br.ufrpe.PlayKing.dados;
 
 import java.util.ArrayList;
 
+import br.ufrpe.PlayKing.beans.Album;
+import br.ufrpe.PlayKing.beans.Musica;
 import br.ufrpe.PlayKing.beans.PlayList;
 
 public class RepositorioPlayList {
@@ -29,6 +31,16 @@ public class RepositorioPlayList {
 			}
 		}
 	}
+	public void adicionarMusicaPlayList(PlayList playList,	Musica musica) {
+		if(this.playLists != null && playList !=null && musica!= null && !this.playLists.contains(musica) ) {
+			for (int i = 0; i < playLists.size(); i++) {
+					if (playLists.get(i).equals(playList)) {
+						playLists.get(i).adicionarMusicaPlayList(musica);
+					}
+			}
+		}
+	}
+	
 	
 	//public  listarTodasPlayLists
 	//public listarTodasMusicasDaPlayList

@@ -10,6 +10,7 @@ public class Artista {
 		this.nomeArtista = nomeArtista;
 		this.idadeArtista = idadeArtista;
 	} 
+	public Artista() {}
 
 	public String getNomeArtista() {
 		return nomeArtista;
