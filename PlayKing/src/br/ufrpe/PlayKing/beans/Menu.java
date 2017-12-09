@@ -7,7 +7,7 @@ import org.omg.SendingContext.RunTime;
 
 import br.ufrpe.PlayKing.negocio.Fachada;
 
-public class Menu {
+public class Menu {//NÃO TERMINADO
 	static Scanner ler = new Scanner(System.in);
 	static Scanner ler2 = new Scanner(System.in);
 	static Scanner ler3 = new Scanner(System.in);
