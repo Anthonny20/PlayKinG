@@ -1,5 +1,6 @@
 package br.ufrpe.PlayKing.negocio;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import br.ufrpe.PlayKing.beans.Album;
@@ -15,7 +16,7 @@ public class ControladorAlbum {
 	}
 
 	public void adicionarAlbum(Album album) {
-		if(album!= null && this.existeAlbum(album) == false) {
+		if(album!= null && !this.existeAlbum(album)) {
 			this.repoAlbum.adicionarAlbum(album);
 			System.out.println("\nAlbum adicionado\n");
 		}
@@ -23,9 +24,9 @@ public class ControladorAlbum {
 			System.out.println("\nAlbum já existente ou nulo\n");
 		}
 	}
-	public void removerAlbum(String nomeAlbum) {
-		if (nomeAlbum!=null ) {
-			this.repoAlbum.removerAlbum(nomeAlbum);
+	public void removerAlbum(Album album) {
+		if (album!=null &&this.existeAlbum(album) ) {
+			this.repoAlbum.removerAlbum(album);
 			System.out.println("\n Album removido com sucesso!");
 		}
 		else {
@@ -33,15 +34,25 @@ public class ControladorAlbum {
 		}
 	}
 
+	public List<Musica> listarMusicasAlbum(Album album) {
+		List<Musica> todasMusicasAlbum = new ArrayList<>();
+		if(repoAlbum != null&& album!= null) 
+		{		
+			todasMusicasAlbum =repoAlbum.listarMusicasAlbum(album);
+		}return todasMusicasAlbum;
+
+	}
+
+
 	public List<Album> listarAlbuns() {
-		
+
 		return repoAlbum.listarAlbuns();
 	}
 
 	public void atualizarAlbum(Album album) {
-		if(album!= null && this.existeAlbum(album) == true) {
-		repoAlbum.atualizarAlbum(album);
-		System.out.println("\nAlbum atualizado com sucesso.\n");
+		if(album!= null && this.existeAlbum(album)) {
+			repoAlbum.atualizarAlbum(album);
+			System.out.println("\nAlbum atualizado com sucesso.\n");
 		}
 		else {
 			System.out.println("\nAlbum não cadastrado.\n");
@@ -49,12 +60,16 @@ public class ControladorAlbum {
 	}
 
 	public void adicionarMusicaAlbum(Album album, Musica musica) {
-		
-		repoAlbum.adicionarMusicaAlbum(album, musica);
-		
+		if (repoAlbum.existeAlbum(album) && musica!=null) {
+
+			repoAlbum.adicionarMusicaAlbum(album, musica);
+			System.out.println("Album musica adicionada a album com sucesso\n");
+		}
+
 	}
 
 	public boolean existeAlbum(Album album) {
+
 		return repoAlbum.existeAlbum(album);
 	}
 

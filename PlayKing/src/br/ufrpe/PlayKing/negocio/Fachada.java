@@ -39,8 +39,8 @@ public class Fachada {
 	public void adicionarAlbum(Album album) {
 		controlAlbum.adicionarAlbum(album);
 	}
-	public void removerAlbum(String nomeAlbum) {
-		controlAlbum.removerAlbum(nomeAlbum);
+	public void removerAlbum(Album album) {
+		controlAlbum.removerAlbum(album);
 	}
 	public List<Album> listarAlbuns() {
 		return controlAlbum.listarAlbuns();
@@ -55,23 +55,33 @@ public class Fachada {
 		return controlAlbum.existeAlbum(album);
 	}
 	
+	
+	public List<Musica> listarMusicasAlbum(Album album) {
+		return controlAlbum.listarMusicasAlbum(album);
+	}
 	//ARTISTA
 	
 	
 	public void adicionarArtista(Artista artista) {
 		controlArtista.adicionarArtista(artista);
 	}
-	public void removerArtista(String nomeArtista) {
+	public void removerArtista(Artista nomeArtista) {
 		controlArtista.removerArtista(nomeArtista);
 	}
 	
 	public List<Artista> listarArtista() {
 		return controlArtista.listarArtista();
 	}
-	//MUSICA
-	public void adicionarMusica(Musica musica) {
-		controlMusica.adicionarMusica(musica);
+	
+	public void adicionarMusicaArtista(Artista artista, Musica musica) {
+		controlArtista.adicionarMusicaArtista(artista, musica);
 	}
+	
+	public boolean existeArtista(Artista artista) {
+		return controlArtista.existeArtista(artista);
+	}
+	//MUSICA
+	
 	public void removerMusica(Musica musica) {
 		controlMusica.removerMusica(musica);
 	}
@@ -85,10 +95,15 @@ public class Fachada {
 	public List<Musica> listarTodasMusicas() {
 		return controlMusica.listarTodasMusicas();
 	}
-	//PLAYLIST
-	public void adicionarPlaylist(PlayList playList) {
-		controlPlayList.adicionarPlaylist(playList);
+	
+	public void adicionarMusica(Musica musica) {
+		controlMusica.adicionarMusica(musica);
 	}
+	public boolean existeMusica(Musica musica) {
+		return controlMusica.existeMusica(musica);
+	}
+	//PLAYLIST
+	
 	public void removerPlayList(PlayList playList) {
 		controlPlayList.removerPlayList(playList);
 	}
@@ -100,6 +115,19 @@ public class Fachada {
 	}
 	
 	
+	
+	public void removerMusicaPlayList(PlayList playList, Musica musica) {
+		controlPlayList.removerMusicaPlayList(playList, musica);
+	}
+	public List<PlayList> listarTodasPlayLists() {
+		return controlPlayList.listarTodasPlayLists();
+	}
+	public List<Musica> listarTodasMusicasDaPlayList(PlayList playList) {
+		return controlPlayList.listarTodasMusicasDaPlayList(playList);
+	}
+	public boolean existePlayList(PlayList playList) {
+		return controlPlayList.existePlayList(playList);
+	}
 	//USUARIO
 	public void adicionarUsuario(Usuario usuario) {
 		controlUsuario.adicionarUsuario(usuario);
@@ -118,6 +146,12 @@ public class Fachada {
 		return controlUsuario.loginUsuario(login, senha);
 	}
 	
+	public List<Usuario> listarUsuarios() {
+		return controlUsuario.listarUsuarios();
+	}
+	public boolean existeUsuario(Usuario usuario) {
+		return controlUsuario.existeUsuario(usuario);
+	}
 	//VENDAS
 	public List<Vendas> listarVendas() {
 		return controlVendas.listarVendas();

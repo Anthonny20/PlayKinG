@@ -21,6 +21,7 @@ public class Album {
 		this.artistaAlbum = artistaAlbum;
 		this.musicasAlbum = new ArrayList<>();
 		this.dataAlbum = dataAlbum;
+		this.precoAlbum = 0;
 	}
 	public Album() {}
 	
@@ -42,6 +43,7 @@ public class Album {
 	}
 
 	public double getPrecoAlbum() {
+		
 		double total =0;
 		for (int i = 0; i < musicasAlbum.size(); i++) {
 			total = total + musicasAlbum.get(i).getPrecoMusica();
@@ -58,25 +60,21 @@ public class Album {
 	public void setMusicasAlbum(ArrayList<Musica> musicasAlbum) {
 		this.musicasAlbum = musicasAlbum;
 	}
-
-	public void adicionarMusica(Musica musica) {
-		this.musicasAlbum.add(musica);
-	}
-
-	public LocalDateTime getDataAlbum() {
+		public LocalDateTime getDataAlbum() {
 		return dataAlbum;
 	}
 	public void setDataAlbum(LocalDateTime dataAlbum) {
 		this.dataAlbum = dataAlbum;
 	}
-	
-	@Override
-	public String toString() {
-		
-		return "\nNome do Album : " +this.getNomeAlbum()+"\n"+	
-			   "Musicas do album : "+this.getMusicasAlbum()+"\n"+
-			   "Preço do album : "+this.getPrecoAlbum();
+
+
+	public void adicionarMusica(Musica musica) {
+		this.musicasAlbum.add(musica);
 	}
+
+
+	
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -106,6 +104,12 @@ public class Album {
 			return false;
 		return true;
 	}
+	@Override
+	public String toString() {
+		return "Album [nomeAlbum=" + nomeAlbum + ", artistaAlbum=" + artistaAlbum + ", musicasAlbum=" + musicasAlbum
+				+ ", precoAlbum=" + precoAlbum + ", dataAlbum=" + dataAlbum + "]";
+	}
+	
 
 
 

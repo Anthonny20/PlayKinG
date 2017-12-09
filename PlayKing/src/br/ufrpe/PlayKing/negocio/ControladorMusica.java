@@ -12,18 +12,20 @@ public class ControladorMusica {
 	public ControladorMusica() {
 		this.repoMusica = RepositorioMusica.getInstance();
 	}
-	
-	public void adicionarMusica(Musica musica) {
-		this.repoMusica.adicionarMusica(musica);
-	}
-	
+
+
 	public void removerMusica(Musica musica) {
-		this.repoMusica.removerMusica(musica);
+		if (musica!= null && repoMusica.existeMusica(musica)) {
+
+
+			this.repoMusica.removerMusica(musica);
+		}
 	}
-	
+
 	public List<Musica> buscarMusica(String nome) {
+
 		return this.repoMusica.buscarNome(nome);
-	}
+	} 
 
 	public List<Musica> buscarNome(String nomeMusica) {
 		return repoMusica.buscarNome(nomeMusica);
@@ -31,5 +33,18 @@ public class ControladorMusica {
 
 	public List<Musica> listarTodasMusicas() {
 		return repoMusica.listarTodasMusicas();
+	}
+
+
+	public void adicionarMusica(Musica musica) {
+		if (musica!= null && !repoMusica.existeMusica(musica)) {
+
+		}
+		repoMusica.adicionarMusica(musica);
+	}
+
+
+	public boolean existeMusica(Musica musica) {
+		return repoMusica.existeMusica(musica);
 	}
 }

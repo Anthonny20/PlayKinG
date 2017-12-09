@@ -20,6 +20,8 @@ public class Vendas {
 		this.dataVenda = dataVenda;
 	}
 
+
+
 	public String getHistoricoVendas() {
 		return historicoVendas;
 	}
@@ -62,7 +64,46 @@ public class Vendas {
 
 
 
+	@Override
+	public String toString() {
+		return "Vendas [historicoVendas=" + historicoVendas + ", totalGanhosVendas=" + totalGanhosVendas
+				+ ", quantidadeMusicasVendidas=" + quantidadeMusicasVendidas + ", quantidadeAlbunsVendidos="
+				+ quantidadeAlbunsVendidos + ", dataVenda=" + dataVenda + "]";
+	}
 
+
+
+	
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Vendas other = (Vendas) obj;
+		if (dataVenda == null) {
+			if (other.dataVenda != null)
+				return false;
+		} else if (!dataVenda.equals(other.dataVenda))
+			return false;
+		if (historicoVendas == null) {
+			if (other.historicoVendas != null)
+				return false;
+		} else if (!historicoVendas.equals(other.historicoVendas))
+			return false;
+		if (quantidadeAlbunsVendidos != other.quantidadeAlbunsVendidos)
+			return false;
+		if (quantidadeMusicasVendidas != other.quantidadeMusicasVendidas)
+			return false;
+		if (Double.doubleToLongBits(totalGanhosVendas) != Double.doubleToLongBits(other.totalGanhosVendas))
+			return false;
+		return true;
+	}
+	
 
 
 

@@ -26,6 +26,7 @@ public class Usuario {
 		this.creditoUsuario = 0;
 		
 	}
+	
 	public String getNomeUsuario() {
 		return nomeUsuario;
 	}

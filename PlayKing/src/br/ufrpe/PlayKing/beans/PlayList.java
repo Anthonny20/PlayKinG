@@ -41,7 +41,17 @@ public class PlayList {
 	public void adicionarMusicaPlayList(Musica musica) {
 		this.usuarioMusicasPlayList.add(musica);
 	}
-	
+	public void removerMusicaPlayList(Musica musica) {
+		this.usuarioMusicasPlayList.remove(musica);
+	}
+
+	public ArrayList<Musica> getUsuarioMusicasPlayList() {
+		return usuarioMusicasPlayList;
+	}
+
+	public void setUsuarioMusicasPlayList(ArrayList<Musica> usuarioMusicasPlayList) {
+		this.usuarioMusicasPlayList = usuarioMusicasPlayList;
+	}
 
 	@Override
 	public String toString() {

@@ -25,7 +25,7 @@ public class RepositorioMusica {
 	}
 
 	public void adicionarMusica(Musica musica) {
-
+		
 		this.musicas.add(musica);
 
 	}
@@ -45,13 +45,18 @@ public class RepositorioMusica {
 		return buscaMusicas;
 	}
 	public List<Musica> listarTodasMusicas(){
-		List<Musica> todasMusicas = new ArrayList<>();
-		
-		for (Musica musica : todasMusicas) {
-			todasMusicas.addAll(musicas);
-		} return todasMusicas;
+	
+		return musicas;		
 	}
-} 
+	public boolean existeMusica(Musica musica) {
+		boolean existe = false;
+		for (int i = 0; i < musicas.size(); i++) {
+			if (musicas.get(i).equals(musica)) {
+				existe = true;
+			}
+		}return existe;
+	}
+}
 
 
 

@@ -9,7 +9,7 @@ public class Musica {
 	
 
 
-	public Musica(String nomeMusica, String tempoMusica, double precoMusica,  Artista artistaMusica) {
+	public Musica(String nomeMusica, String tempoMusica, double precoMusica,Artista artistaMusica) {
 		super();
 		this.nomeMusica = nomeMusica;
 		this.tempoMusica = tempoMusica;
@@ -36,14 +36,15 @@ public class Musica {
 		this.precoMusica = precoMusica;
 	}
 
+	
+	
+
 	public Artista getArtistaMusica() {
 		return artistaMusica;
 	}
 	public void setArtistaMusica(Artista artistaMusica) {
 		this.artistaMusica = artistaMusica;
 	}
-	
-
 	@Override
 	public String toString() {
 		

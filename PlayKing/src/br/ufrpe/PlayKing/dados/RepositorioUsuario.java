@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import br.ufrpe.PlayKing.beans.Album;
 import br.ufrpe.PlayKing.beans.Usuario;
 
 public class RepositorioUsuario  {
@@ -43,11 +44,43 @@ public class RepositorioUsuario  {
 	}
 	public Usuario procurarUsuario(String login) {
 		Usuario achado = null;
-		for (Usuario usuario : usuarios) {
-			if(this.usuarios.contains(usuario) ){
-				achado = usuario;
+		for (int i = 0; i < usuarios.size(); i++) {
+			if (this.usuarios.get(i).getLoginUsuario().equals(login)) {
+				achado= this.usuarios.get(i);
 			}
 		}return achado;
+		
+		}
+	
+	public List<Usuario> listarUsuarios(){
+		return usuarios;
+	}
+	public boolean existeUsuario(Usuario usuario) {
+		boolean existe = false;
+		for (int i = 0; i < usuarios.size(); i++) {
+			if (usuarios.get(i).equals(usuario)) {
+				existe = true;
+			}
+		}return existe;
 	}
 
-}
+	public boolean loginUsuario(String login,String senha) {
+		boolean loginEfetuado = false;
+		
+			Usuario auxiliar = this.procurarUsuario(login);
+			
+					if(auxiliar.getSenhaUsuario().equals(senha)) {
+						loginEfetuado = true;
+						System.out.println("Login efetuado com sucesso\n");
+					}
+					else {
+						System.out.println("Senha incorreta\n");
+					}return loginEfetuado;
+				}
+		
+		
+		
+			
+
+	}
+
