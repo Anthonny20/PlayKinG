@@ -55,7 +55,7 @@ public class Teste {
 		Fachada.getInstance().adicionarMusicaAlbum(album1, musica1);
 		Fachada.getInstance().adicionarMusicaAlbum(album2, musica2);
 		 
-		
+		Fachada.getInstance().listarArtista();
 	
 		
 	}
