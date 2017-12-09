@@ -170,7 +170,7 @@ public class Menu {
 			System.out.println("Nome :\n");
 			musica.setNomeMusica(ler2.nextLine());
 			System.out.println("Artista : \n");
-			musica.setArtistaMusica(ler3.nextLine());
+		//	musica.setArtistaMusica(ler3.nextLine());
 			
 		//	Fachada.getInstance().adicionarMusicaArtista(ler3.nextLine(), musica);
 			

@@ -1,12 +1,10 @@
 package br.ufrpe.PlayKing.negocio;
-<<<<<<< HEAD
+
 
 import java.util.List;
 
 import br.ufrpe.PlayKing.beans.Musica;
-=======
-//TODO CRIAR REGRAS DE NEGOCIO
->>>>>>> branch 'master' of https://github.com/Anthonny20/PlayKinG
+
 import br.ufrpe.PlayKing.beans.PlayList;
 import br.ufrpe.PlayKing.dados.RepositorioPlayList;
 
