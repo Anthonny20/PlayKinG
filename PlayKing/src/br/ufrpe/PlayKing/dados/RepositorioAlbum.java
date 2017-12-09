@@ -34,7 +34,15 @@ public class RepositorioAlbum  {
 	}
 	
 	public List<Album>  listarAlbuns() {
+<<<<<<< HEAD
 		return albuns;
+=======
+		List <Album>todosAlbuns = new ArrayList<>();
+		for (int i = 0; i < albuns.size(); i++) {
+			 	todosAlbuns.addAll(albuns);
+		}
+		return todosAlbuns;
+>>>>>>> branch 'master' of https://github.com/Anthonny20/PlayKinG
 	}
 	public void atualizarAlbum (Album album) {
 		
