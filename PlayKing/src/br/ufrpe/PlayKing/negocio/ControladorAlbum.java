@@ -1,16 +1,14 @@
 package br.ufrpe.PlayKing.negocio;
 
 import java.util.ArrayList;
-
 import java.util.List;
 
 import br.ufrpe.PlayKing.beans.Album;
 import br.ufrpe.PlayKing.beans.Musica;
+import br.ufrpe.PlayKing.dados.IRepositorioGenerico;
 import br.ufrpe.PlayKing.dados.RepositorioAlbum;
-import br.ufrpe.PlayKing.dados.RepositorioGenerico;
 import br.ufrpe.PlayKing.exception.ElementoJaExisteException;
 import br.ufrpe.PlayKing.exception.ElementoNaoExisteException;
-import br.ufrpe.PlayKing.dados.IRepositorioGenerico;
 
 public class ControladorAlbum implements IControladorAlbum {
 

@@ -7,7 +7,7 @@ import br.ufrpe.PlayKing.beans.Album;
 import br.ufrpe.PlayKing.beans.Musica;
 import br.ufrpe.PlayKing.beans.PlayList;
 
-public class RepositorioPlayList {
+public class RepositorioPlayList extends RepositorioGenerico<PlayList> {
 	
 	private static RepositorioPlayList instance;
 	private ArrayList<PlayList> playLists;
@@ -22,16 +22,7 @@ public class RepositorioPlayList {
 		this.playLists = new ArrayList<>();
 	}
 	
-	public void adicionarPlayList(PlayList playList) {
-		this.playLists.add(playList);
-	}
-	public void removerPlayList(PlayList playList) {
-		for (int i = 0; i < playLists.size(); i++) {
-			if (this.playLists.get(i).equals(playList)) {
-				this.playLists.remove(i);
-			}
-		}
-	}
+
 	public void adicionarMusicaPlayList(PlayList playList,	Musica musica) {
 		 
 			for (int i = 0; i < playLists.size(); i++) {
@@ -63,16 +54,8 @@ public class RepositorioPlayList {
 		}return musicasDeterminasPlayList;
 	}
 	
-	public boolean existePlayList(PlayList playList) {
-		boolean existe = false;
-		for (int i = 0; i < playLists.size(); i++) {
-			if (playLists.get(i).equals(playList)) {
-				existe = true;
-			}
-		}return existe;
-	}
-	//public atualizarPlayList
 	
+
 		
 }	
 

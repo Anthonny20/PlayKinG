@@ -6,55 +6,114 @@ import java.util.List;
 import br.ufrpe.PlayKing.beans.Musica;
 
 import br.ufrpe.PlayKing.beans.PlayList;
+import br.ufrpe.PlayKing.dados.IRepositorioGenerico;
 import br.ufrpe.PlayKing.dados.RepositorioPlayList;
+import br.ufrpe.PlayKing.exception.ElementoJaExisteException;
+import br.ufrpe.PlayKing.exception.ElementoNaoExisteException;
 
-public class ControladorPlayList {
+public class ControladorPlayList implements IControladorPlayList {
 
-	private RepositorioPlayList repoPlayList;
+	private RepositorioPlayList repo;
+	private IRepositorioGenerico<PlayList> repoPlayList;
 
-	public ControladorPlayList() {
-		this.repoPlayList = RepositorioPlayList.getInstance();
+	public ControladorPlayList(IRepositorioGenerico<PlayList> instancia) {
+		this.repo = RepositorioPlayList.getInstance();
+		this.repoPlayList = instancia;
 	}
 
-	public void adicionarPlayList(PlayList playList) {
-		if (playList != null && !repoPlayList.existePlayList(playList)) {
+	@Override
+	public void removerElemento(PlayList elemento) throws ElementoNaoExisteException {
+		try {
+			if (elemento != null && this.existeElemento(elemento)) {
+				this.repo.removerElemento(elemento);
+			}else {
+				throw new ElementoNaoExisteException(elemento);
+			}
+		} catch (ElementoNaoExisteException e) {
+			e.printStackTrace();
+		}
 
+	}
 
-			this.repoPlayList.adicionarPlayList(playList);
+	@Override
+	public List<PlayList> listarElementos() {
+
+		return repo.listarElementos();
+	}
+
+	@Override
+	public boolean existeElemento(PlayList elemento) {
+		return this.repo.existeElemento(elemento);
+
+	}
+
+	@Override
+	public void cadastrarElemento(PlayList elemento) throws ElementoJaExisteException {
+		try {
+			if (elemento!=null && !this.existeElemento(elemento)) {
+				this.repo.cadastrarElemento(elemento);
+			}else {
+				throw new ElementoJaExisteException(elemento);
+			}
+		} catch (ElementoJaExisteException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	@Override
+	public void atualizarElemento(PlayList elemento) throws ElementoNaoExisteException {
+		try {
+			if (elemento!= null && this.existeElemento(elemento)) {
+				this.repo.atualizarElemento(elemento);
+			} else {
+				throw new ElementoNaoExisteException(elemento);
+			}
+		} catch (ElementoNaoExisteException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public void adicionarMusicaPlayList(PlayList playList, Musica musica)throws ElementoJaExisteException,ElementoNaoExisteException {
+
+		try {
+			if (playList!=null && !repo.existeElemento(playList)&& musica!=null&& !playList.getUsuarioMusicasPlayList().contains(musica)) {
+				repo.adicionarMusicaPlayList(playList, musica);
+			}
+			else 
+				throw new ElementoJaExisteException(musica);
+
+		}catch (ElementoJaExisteException e) {
+			e.printStackTrace();
+		}
+		catch (NullPointerException e) {
+			throw new NullPointerException("Argumneto inválido");
 		}
 	}
-	public void removerPlayList(PlayList playList) {
-		if (playList!=null && repoPlayList.existePlayList(playList)) {
 
+	public void removerMusicaPlayList(PlayList playList, Musica musica)throws ElementoNaoExisteException {
+		try {
 
-			this.repoPlayList.removerPlayList(playList);
+			if (playList!=null && repo.existeElemento(playList)&& musica!=null&& playList.getUsuarioMusicasPlayList().contains(musica)) {
+				repo.removerMusicaPlayList(playList, musica);
+			}
+
+			else 
+				throw new ElementoNaoExisteException(musica);
+		}	catch (ElementoNaoExisteException e) {
+			e.printStackTrace();
 		}
-	}
 
-	
-	public void adicionarMusicaPlayList(PlayList playList, Musica musica) {
-		if (playList!=null && !repoPlayList.existePlayList(playList)&& musica!=null&& !playList.getUsuarioMusicasPlayList().contains(musica)) {
-			
-		
-		repoPlayList.adicionarMusicaPlayList(playList, musica);
-	}}
-
-	public void removerMusicaPlayList(PlayList playList, Musica musica) {
-		if (playList!=null && repoPlayList.existePlayList(playList)&& musica!=null&& playList.getUsuarioMusicasPlayList().contains(musica)) {
-			
-		repoPlayList.removerMusicaPlayList(playList, musica);
-	}
 	}
 	public List<PlayList> listarTodasPlayLists() {
-		return repoPlayList.listarTodasPlayLists();
+		return repo.listarElementos();
 	}
 
 	public List<Musica> listarTodasMusicasDaPlayList(PlayList playList) {
-		return repoPlayList.listarTodasMusicasDaPlayList(playList);
+		return repo.listarTodasMusicasDaPlayList(playList);
 	}
 
-	public boolean existePlayList(PlayList playList) {
-		return repoPlayList.existePlayList(playList);
-	}
+
 
 }

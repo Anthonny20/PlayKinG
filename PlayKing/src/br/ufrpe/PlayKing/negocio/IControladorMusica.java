@@ -17,5 +17,6 @@ public interface IControladorMusica {
 	boolean existeElemento(Musica musica);
 
 	List<Musica> listarElemento();
-
+	
+	public List<Musica> buscarMusica(String nome)throws ElementoNaoExisteException;
 }

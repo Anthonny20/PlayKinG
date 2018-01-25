@@ -1,8 +1,7 @@
 package br.ufrpe.PlayKing.negocio;
-//TODO CRIAR REGRAS DE NEGOCIO
+
 import java.util.List;
 
-import br.ufrpe.PlayKing.beans.Artista;
 import br.ufrpe.PlayKing.beans.Musica;
 import br.ufrpe.PlayKing.dados.IRepositorioGenerico;
 import br.ufrpe.PlayKing.dados.RepositorioMusica;
