@@ -1,10 +1,11 @@
 package br.ufrpe.PlayKing.beans;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 
-public class Usuario {
+public class Usuario implements Serializable {
 
 	private String nomeUsuario;
 	private String loginUsuario;

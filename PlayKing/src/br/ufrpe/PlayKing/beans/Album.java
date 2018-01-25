@@ -1,12 +1,17 @@
 package br.ufrpe.PlayKing.beans;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Album {
+public class Album implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6130573867205424765L;
 	private String nomeAlbum;
 	private Artista artistaAlbum;
 	private ArrayList<Musica> musicasAlbum;
@@ -78,36 +83,18 @@ public class Album {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Album other = (Album) obj;
-		if (artistaAlbum == null) {
-			if (other.artistaAlbum != null)
-				return false;
-		} else if (!artistaAlbum.equals(other.artistaAlbum))
-			return false;
-		if (musicasAlbum == null) {
-			if (other.musicasAlbum != null)
-				return false;
-		} else if (!musicasAlbum.equals(other.musicasAlbum))
-			return false;
-		if (nomeAlbum == null) {
-			if (other.nomeAlbum != null)
-				return false;
-		} else if (!nomeAlbum.equals(other.nomeAlbum))
-			return false;
-		if (Double.doubleToLongBits(precoAlbum) != Double.doubleToLongBits(other.precoAlbum))
-			return false;
-		return true;
+	boolean resultado = false;
+	if(obj instanceof Album && ((Album)obj).getArtistaAlbum().equals(artistaAlbum)&& ((Album)obj).getNomeAlbum().equals(nomeAlbum)) {
+		resultado = true;
+	}
+	return resultado;
 	}
 	@Override
 	public String toString() {
-		return "Album [nomeAlbum=" + nomeAlbum + ", artistaAlbum=" + artistaAlbum + ", musicasAlbum=" + musicasAlbum
-				+ ", precoAlbum=" + precoAlbum + ", dataAlbum=" + dataAlbum + "]";
+		return "Album Descrição:\n,"
+				+ "Nome : "+this.getNomeAlbum()+
+				"\nData : "+this.getDataAlbum()+
+				"\nArtista : "+this.getArtistaAlbum();
 	}
 	
 

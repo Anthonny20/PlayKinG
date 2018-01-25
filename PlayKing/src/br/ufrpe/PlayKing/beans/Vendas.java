@@ -1,8 +1,9 @@
 package br.ufrpe.PlayKing.beans;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Vendas {
+public class Vendas implements Serializable {
 
 	private String historicoVendas;//MOSTRARÁ TODAS AS VENDAS EM GERAL //vai virar um array de String
 	private double totalGanhosVendas;//MOSTRARÁ O LUCRO TOTAL, GANHO COM ÀS MUSÍCAS E COM OS ALBÚNS VENDIDOS MAS A POR TIPO DE USUÁRIO/ vai virar um array de double

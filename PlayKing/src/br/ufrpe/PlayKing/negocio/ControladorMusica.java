@@ -2,49 +2,105 @@ package br.ufrpe.PlayKing.negocio;
 //TODO CRIAR REGRAS DE NEGOCIO
 import java.util.List;
 
+import br.ufrpe.PlayKing.beans.Artista;
 import br.ufrpe.PlayKing.beans.Musica;
+import br.ufrpe.PlayKing.dados.IRepositorioGenerico;
 import br.ufrpe.PlayKing.dados.RepositorioMusica;
+import br.ufrpe.PlayKing.exception.ElementoJaExisteException;
+import br.ufrpe.PlayKing.exception.ElementoNaoExisteException;
 
-public class ControladorMusica {
+public class ControladorMusica implements IControladorMusica {
+	
+	private IRepositorioGenerico<Musica> repoMusica;
+	private RepositorioMusica repo;
+	
 
-	private RepositorioMusica repoMusica;
-
-	public ControladorMusica() {
-		this.repoMusica = RepositorioMusica.getInstance();
+	public ControladorMusica(IRepositorioGenerico<Musica> instancia) {
+		this.repoMusica = instancia;
+		this.repo = RepositorioMusica.getInstance();
 	}
 
+	@Override
+	public void removerElemento(Musica musica) throws ElementoNaoExisteException {
+		try {
 
-	public void removerMusica(Musica musica) {
-		if (musica!= null && repoMusica.existeMusica(musica)) {
-
-
-			this.repoMusica.removerMusica(musica);
+			if (musica!= null && this.repoMusica.existeElemento(musica)) {
+				this.repoMusica.removerElemento(musica);
+			}
+			else {
+				throw new ElementoNaoExisteException(musica);
+			}
+		} catch (ElementoNaoExisteException e) {
+			e.printStackTrace();
 		}
 	}
 
-	public List<Musica> buscarMusica(String nome) {
 
-		return this.repoMusica.buscarNome(nome);
+	public List<Musica> buscarMusica(String nome)throws ElementoNaoExisteException{
+		List<Musica> buscaLista = null;
+		try {
+			if (nome!= null ) {
+				buscaLista =  this.repo.buscarNome(nome);
+			}
+
+			else {
+				throw new ElementoNaoExisteException(nome);
+			}
+		} catch (ElementoNaoExisteException e) {
+			e.printStackTrace();
+		}
+		return buscaLista;
 	} 
 
-	public List<Musica> buscarNome(String nomeMusica) {
-		return repoMusica.buscarNome(nomeMusica);
-	}
+
 
 	public List<Musica> listarTodasMusicas() {
-		return repoMusica.listarTodasMusicas();
+		return repo.listarTodasMusicas();
+	}
+	@Override
+	public List<Musica> listarElemento() {
+		return repoMusica.listarElementos();
 	}
 
+	@Override
+	public void cadastrarElemento (Musica musica) throws ElementoJaExisteException{
+		try {
+			if (musica!= null && !repoMusica.existeElemento(musica)) {
+				this.repoMusica.cadastrarElemento(musica);
+				
+			}else {
+				throw new ElementoJaExisteException(musica);
+			}
+			}
+			catch (ElementoJaExisteException e) {
+				e.printStackTrace();
+			}
+			catch (NullPointerException e) {
+					throw new NullPointerException("Argumento inválido");
+					
+			}
 
-	public void adicionarMusica(Musica musica) {
-		if (musica!= null && !repoMusica.existeMusica(musica)) {
 
 		}
-		repoMusica.adicionarMusica(musica);
+	@Override
+	public void atualizarElemento(Musica musica) throws ElementoNaoExisteException{
+		try {
+			if(musica !=null && this.repoMusica.existeElemento(musica)) {
+				this.repoMusica.atualizarElemento(musica);
+			}else {
+				throw new ElementoNaoExisteException(musica);
+			}
+		} catch (ElementoNaoExisteException e) {
+			e.printStackTrace();
+		}
+		catch (NullPointerException e) {
+			 throw new NullPointerException("Argumento nulo");
+		}
+
 	}
-
-
-	public boolean existeMusica(Musica musica) {
-		return repoMusica.existeMusica(musica);
+	
+	@Override
+	public boolean existeElemento(Musica musica) {
+		return this.repoMusica.existeElemento(musica);
 	}
 }

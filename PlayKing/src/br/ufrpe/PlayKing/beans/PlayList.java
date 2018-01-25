@@ -1,8 +1,9 @@
 package br.ufrpe.PlayKing.beans;
-//CLASSE FICOU OBSOLETA? JÁ QUE ESTOU CRINADO A PLAYSLIST , COMO UM ARRAY DE MUSICAS NA CLASSE USUARIO.
+import java.io.Serializable;
+
 import java.util.ArrayList;
 
-public class PlayList {
+public class PlayList implements Serializable {
 
 	private String namePlayList;
 	private ArrayList<Musica> usuarioMusicasPlayList;

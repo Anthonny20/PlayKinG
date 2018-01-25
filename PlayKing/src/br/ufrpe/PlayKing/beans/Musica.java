@@ -1,6 +1,8 @@
 package br.ufrpe.PlayKing.beans;
 
-public class Musica {
+import java.io.Serializable;
+
+public class Musica implements Serializable {
 
 	private String nomeMusica;
 	private String tempoMusica;

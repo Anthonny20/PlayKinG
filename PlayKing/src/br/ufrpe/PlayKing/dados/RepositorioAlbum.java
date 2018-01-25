@@ -6,7 +6,7 @@ import java.util.List;
 import br.ufrpe.PlayKing.beans.Album;
 import br.ufrpe.PlayKing.beans.Musica;
 
-public class RepositorioAlbum  {
+public class RepositorioAlbum extends RepositorioGenerico<Album> {
 
 	private static RepositorioAlbum instance;
 	private ArrayList<Album> albuns;
@@ -22,28 +22,6 @@ public class RepositorioAlbum  {
 		this.albuns = new ArrayList<>();
 	}
 
-	public void adicionarAlbum(Album album) {
-		this.albuns.add(album);
-	}
-	public void removerAlbum(Album album) {
-		for (int i = 0; i < albuns.size(); i++) {
-			if (this.albuns.get(i).getNomeAlbum().equals(album)) {
-				this.albuns.remove(i);
-			}
-		}
-	}
-	
-	public List<Album>  listarAlbuns() {
-		return albuns;
-	}
-	public void atualizarAlbum (Album album) {
-		
-			for (int i = 0; i < albuns.size(); i++) {
-				if(albuns.get(i).equals(album)) {
-					albuns.set(i, album);
-				}
-			}
-		}
 	
 	public void adicionarMusicaAlbum(Album album,Musica musica) {
 	
@@ -54,15 +32,7 @@ public class RepositorioAlbum  {
 					
 			}
 	}
-	
-	public boolean existeAlbum(Album album) {
-		boolean existe = false;
-		for (int i = 0; i < albuns.size(); i++) {
-			if (albuns.get(i).equals(album)) {
-				existe = true;
-			}
-		}return existe;
-	}
+
 	public List<Musica> listarMusicasAlbum(Album album){
 		List<Musica> musicasDoAlbum = new ArrayList<Musica>();
 		for (int i = 0; i < albuns.size(); i++) {
@@ -72,5 +42,7 @@ public class RepositorioAlbum  {
 		}
 		return musicasDoAlbum;
 	}
+
+	
 }
 

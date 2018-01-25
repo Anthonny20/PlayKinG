@@ -1,7 +1,13 @@
 package br.ufrpe.PlayKing.beans;
 
-public class Artista {
+import java.io.Serializable;
 
+public class Artista implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 691821013640635966L;
 	private String nomeArtista;
 	private int idadeArtista;
 
