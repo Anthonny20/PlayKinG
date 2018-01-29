@@ -18,6 +18,9 @@ public class Teste {
 		RepositorioAlbum repo = RepositorioAlbum.getInstance();
 		Artista a1 = new Artista("an", 10);
 		
+		PlayList p = new PlayList("1", null);
+		fachada.cadastrarElemento(p);
+		
 		fachada.cadastrarElemento(a1);	
 			repo.listarElementos();
 			

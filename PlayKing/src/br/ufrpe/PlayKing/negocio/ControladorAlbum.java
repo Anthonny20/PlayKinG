@@ -9,6 +9,7 @@ import br.ufrpe.PlayKing.dados.IRepositorioGenerico;
 import br.ufrpe.PlayKing.dados.RepositorioAlbum;
 import br.ufrpe.PlayKing.exception.ElementoJaExisteException;
 import br.ufrpe.PlayKing.exception.ElementoNaoExisteException;
+import br.ufrpe.PlayKing.exception.UsuarioJaCadastradoException;
 
 public class ControladorAlbum implements IControladorAlbum {
 

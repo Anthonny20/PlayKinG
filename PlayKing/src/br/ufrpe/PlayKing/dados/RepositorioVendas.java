@@ -10,10 +10,11 @@ import br.ufrpe.PlayKing.beans.Usuario;
 import br.ufrpe.PlayKing.beans.Vendas;
 
 
-public class RepositorioVendas {
+public class RepositorioVendas extends RepositorioGenerico<Vendas>{
  //TODO IMPLEMENTAR
 	private static RepositorioVendas instance;
 	private ArrayList<Vendas> vendas;
+	
 
 	public static RepositorioVendas getInstance() {
 		if (instance == null) {
@@ -42,7 +43,11 @@ public class RepositorioVendas {
 		}return dataDeterminadaVendas;
 	}
 	
-	//public void registrarVenda(Usuario usuario,Musica musica) {
+	/*public void registrarVenda(Usuario usuario,Musica musica) {
+		for (int i = 0; i < usuarios.size(); i++) {
+			
+		}*/
+	}
 		
 	
 	
@@ -53,4 +58,4 @@ public class RepositorioVendas {
 	
 	
 	
-}
+

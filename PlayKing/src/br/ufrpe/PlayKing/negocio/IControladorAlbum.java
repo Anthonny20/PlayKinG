@@ -7,26 +7,27 @@ import br.ufrpe.PlayKing.beans.Album;
 import br.ufrpe.PlayKing.beans.Musica;
 import br.ufrpe.PlayKing.exception.ElementoJaExisteException;
 import br.ufrpe.PlayKing.exception.ElementoNaoExisteException;
+import br.ufrpe.PlayKing.exception.UsuarioJaCadastradoException;
 
 public interface IControladorAlbum {
 
 
-	
-	public void removerElemento(Album elemento)throws ElementoNaoExisteException;
-	
 
-	public List<Album> listarElemento();
-	
+	void removerElemento(Album elemento)throws ElementoNaoExisteException;
 
-	public void cadastrarElemento(Album elemento)throws ElementoJaExisteException;
-	
 
-	public void atualizarElemento(Album elemento) throws ElementoNaoExisteException;
+	List<Album> listarElemento();
 
-	public boolean existeElemento(Album elemento);
 
-	public List<Musica> listarMusicasAlbum(Album album);
+	void cadastrarElemento(Album elemento)throws ElementoJaExisteException;
 
-	public void adicionarMusicaAlbum(Album album, Musica musica) throws ElementoJaExisteException,ElementoNaoExisteException;
-	
+
+	void atualizarElemento(Album elemento) throws ElementoNaoExisteException;
+
+	boolean existeElemento(Album elemento);
+
+	List<Musica> listarMusicasAlbum(Album album);
+
+	void adicionarMusicaAlbum(Album album, Musica musica) throws ElementoJaExisteException,ElementoNaoExisteException;
+
 }

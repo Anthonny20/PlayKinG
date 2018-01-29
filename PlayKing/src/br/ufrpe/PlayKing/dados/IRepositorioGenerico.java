@@ -4,6 +4,7 @@ import java.util.List;
 
 import br.ufrpe.PlayKing.exception.ElementoJaExisteException;
 import br.ufrpe.PlayKing.exception.ElementoNaoExisteException;
+import br.ufrpe.PlayKing.exception.UsuarioJaCadastradoException;
 
 public interface IRepositorioGenerico<T> {
 	

@@ -7,7 +7,7 @@ import java.util.List;
 import br.ufrpe.PlayKing.beans.Album;
 import br.ufrpe.PlayKing.beans.Usuario;
 
-public class RepositorioUsuario  {
+public class RepositorioUsuario extends RepositorioGenerico<Usuario>  {
 
 	private static RepositorioUsuario instance;
 	private ArrayList<Usuario> usuarios;
@@ -24,24 +24,7 @@ public class RepositorioUsuario  {
 	}
 
 
-	public void adicionarUsuario(Usuario usuario) {
-		this.usuarios.add(usuario);
-	}
 
-	public void removerUsuario(Usuario usuario) {
-		for (int i = 0; i <usuarios.size(); i++) {
-			if(this.usuarios.get(i).equals(usuario)) {
-				this.usuarios.remove(i);
-			}
-		}
-	}
-	public void atualizarUsuario(Usuario usuario) {
-		for (int i = 0; i < usuarios.size(); i++) {
-			if(this.usuarios.get(i).equals(usuario)) {
-				this.usuarios.set(i, usuario);
-			}
-		}
-	}
 	public Usuario procurarUsuario(String login) {
 		Usuario achado = null;
 		for (int i = 0; i < usuarios.size(); i++) {
@@ -55,30 +38,19 @@ public class RepositorioUsuario  {
 	public List<Usuario> listarUsuarios(){
 		return usuarios;
 	}
-	public boolean existeUsuario(Usuario usuario) {
-		boolean existe = false;
+	
+	public boolean existeUsuarioLogin(String login) {
+		boolean resultado = false;
 		for (int i = 0; i < usuarios.size(); i++) {
-			if (usuarios.get(i).equals(usuario)) {
-				existe = true;
+			if (usuarios.get(i).getLoginUsuario().equals(login)) {
+				resultado = true;
 			}
-		}return existe;
+		}
+		return resultado;
 	}
+	
 
-	public boolean loginUsuario(String login,String senha) {
-		boolean loginEfetuado = false;
-		
-			Usuario auxiliar = this.procurarUsuario(login);
-			
-					if(auxiliar.getSenhaUsuario().equals(senha)) {
-						loginEfetuado = true;
-						System.out.println("Login efetuado com sucesso\n");
-					}
-					else {
-						System.out.println("Senha incorreta\n");
-					}return loginEfetuado;
-				}
-		
-		
+
 		
 			
 

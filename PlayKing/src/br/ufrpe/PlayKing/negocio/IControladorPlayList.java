@@ -18,16 +18,16 @@ public interface IControladorPlayList {
 	void cadastrarElemento(PlayList elemento) throws ElementoJaExisteException;
 
 	void atualizarElemento(PlayList elemento) throws ElementoNaoExisteException;
-	
 
-	
 
-	public void adicionarMusicaPlayList(PlayList playList, Musica musica)throws ElementoJaExisteException,ElementoNaoExisteException;
 
-	public void removerMusicaPlayList(PlayList playList, Musica musica)throws ElementoNaoExisteException;
-	public List<PlayList> listarTodasPlayLists();
 
-	public List<Musica> listarTodasMusicasDaPlayList(PlayList playList);
+	void adicionarMusicaPlayList(PlayList playList, Musica musica)throws ElementoJaExisteException,ElementoNaoExisteException;
+
+	void removerMusicaPlayList(PlayList playList, Musica musica)throws ElementoNaoExisteException;
+	List<PlayList> listarTodasPlayLists();
+
+	List<Musica> listarTodasMusicasDaPlayList(PlayList playList);
 
 
 }

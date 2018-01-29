@@ -1,5 +1,6 @@
 package br.ufrpe.PlayKing.negocio;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,8 +8,11 @@ import br.ufrpe.PlayKing.beans.Album;
 import br.ufrpe.PlayKing.beans.Artista;
 import br.ufrpe.PlayKing.beans.Musica;
 import br.ufrpe.PlayKing.beans.PlayList;
+import br.ufrpe.PlayKing.beans.Usuario;
+import br.ufrpe.PlayKing.beans.Vendas;
 import br.ufrpe.PlayKing.exception.ElementoJaExisteException;
 import br.ufrpe.PlayKing.exception.ElementoNaoExisteException;
+import br.ufrpe.PlayKing.exception.UsuarioJaCadastradoException;
 
 public interface IFachada {
 
@@ -74,6 +78,35 @@ public interface IFachada {
 
 	public List<Musica> listarTodasMusicasDaPlayList(PlayList playList);
 
+	
+	
+	
+	
+	public Usuario procurarUsuario(String login) throws ElementoNaoExisteException;
+	public void removerElemento(Usuario elemento) throws ElementoNaoExisteException;
+	public boolean existeElemento(Usuario elemento);
+	public void cadastrarElemento(Usuario elemento) throws ElementoJaExisteException;
+	public void atualizarElemento(Usuario elemento) throws ElementoNaoExisteException;
+	public boolean loginUsuario(String login, String senha) throws ElementoNaoExisteException;
+	
+	public List<Usuario> listarUsuarios();
+	public boolean existeUsuario(Usuario usuario);
+	public boolean existeUsuarioLogin(String login);
+	
+	
+	
+	
+	
+	public List<Vendas> listarVendas();
+	public List<Vendas> listarVendasPorData(LocalDateTime dataVenda);
+	public void removerElemento(Vendas elemento) throws ElementoNaoExisteException;
+	public boolean existeElemento(Vendas elemento);
+	public void cadastrarElemento(Vendas elemento) throws ElementoJaExisteException;
+	public void atualizarElemento(Vendas elemento) throws ElementoNaoExisteException;
+	
+	
+	
+	
 
 
 }

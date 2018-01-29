@@ -38,6 +38,9 @@ public class Usuario implements Serializable {
 		return loginUsuario;
 	}
 	
+	public void setLoginUsuario(String loginUsuario) {
+		this.loginUsuario = loginUsuario;
+	}
 	/*public boolean usuarioNomeExiste(String loginNome) {
 		boolean existe = false;
 		for (int i = 0; i < usuarios.size(); i++) {
