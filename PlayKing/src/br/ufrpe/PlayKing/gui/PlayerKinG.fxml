@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="262.0" prefWidth="206.0" style="-fx-background-color: #2c3e50;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.PlayKing.gui.PlayerKinGController">
+   <children>
+      <MediaView fx:id="playerMediaView" fitHeight="200.0" fitWidth="200.0" layoutX="3.0" />
+      <ImageView fitHeight="180.0" fitWidth="210.0" layoutX="13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../../815329_miscellaneous_512x512.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnStopPlayer" layoutX="14.0" layoutY="223.0" mnemonicParsing="false" onAction="#stopMusica" text="Stop" textFill="#fc0000">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnPlayPlayer" layoutX="77.0" layoutY="223.0" mnemonicParsing="false" onAction="#playMusica" text="Play">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnPausePlayer" layoutX="140.0" layoutY="223.0" mnemonicParsing="false" onAction="#pauseMusica" text="Pause" textFill="#a2a2a2">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

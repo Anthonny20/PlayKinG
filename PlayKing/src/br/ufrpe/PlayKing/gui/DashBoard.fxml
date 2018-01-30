@@ -3,16 +3,20 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="769.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.PlayKing.gui.DashBoardController">
    <children>
       <Separator layoutX="148.0" layoutY="1.0" orientation="VERTICAL" prefHeight="520.0" prefWidth="6.0" />
       <Separator layoutX="-2.0" layoutY="56.0" prefHeight="6.0" prefWidth="760.0" />
@@ -62,7 +66,7 @@
             </ImageView>
          </children>
       </Pane>
-      <Label layoutX="624.0" prefHeight="58.0" prefWidth="136.0" style="-fx-background-color: #7f8c8d;" text="Configurações" textFill="#fff9f9" />
+      <Label layoutX="629.0" prefHeight="58.0" prefWidth="136.0" style="-fx-background-color: #7f8c8d;" text="Configurações" textFill="#fff9f9" />
       <ImageView fitHeight="32.0" fitWidth="38.0" layoutX="714.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../../../settings-icon.png" />
@@ -74,18 +78,67 @@
         <tabs>
             <Tab text="DashBoard">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="460.0" prefWidth="468.0">
+                     <children>
+                        <ListView fx:id="musicPlayerListView" layoutX="7.0" onMousePressed="#playMusicaSelecionada" prefHeight="267.0" prefWidth="469.0" style="-fx-background-radius: 8;" />
+                        <TextField fx:id="musicNowPlaying" layoutX="7.0" layoutY="316.0" prefHeight="32.0" prefWidth="299.0" />
+                        <Button fx:id="btnStop" layoutX="86.0" layoutY="365.0" mnemonicParsing="false" onAction="#musicControl" text="Stop" textFill="#f20404">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnBrowse" layoutX="313.0" layoutY="316.0" mnemonicParsing="false" onAction="#musicControl" text="Browse" />
+                        <Button fx:id="btnLoadList" layoutX="380.0" layoutY="316.0" mnemonicParsing="false" onAction="#musicControl" text="Load PlayList" />
+                        <Button fx:id="btnPlayer" layoutX="14.0" layoutY="365.0" mnemonicParsing="false" onAction="#btnPlayDashBoard" text="Play" />
+                     </children></AnchorPane>
               </content>
             </Tab>
-          <Tab text="Todos Artistas" />
-            <Tab text="Todos Albúns">
+            <Tab text="Meus Albúns">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView layoutX="14.0" layoutY="117.0" prefHeight="343.0" prefWidth="366.0">
+                          <columns>
+                            <TableColumn prefWidth="119.0" text="Nome Albúm" />
+                            <TableColumn minWidth="50.0" prefWidth="106.0" text="Artista" />
+                              <TableColumn prefWidth="139.0" text="Data de Lançamento" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="81.0" layoutY="52.0" text="Todos seus Albuns">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="393.0" layoutY="205.0" mnemonicParsing="false" text="Play" />
+                        <Button layoutX="395.0" layoutY="335.0" mnemonicParsing="false" text="Delete" />
+                     </children></AnchorPane>
               </content>
             </Tab>
-            <Tab text="Todas Músicas">
+            <Tab text="Minhas PlayLists">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView layoutX="138.0" layoutY="108.0" prefHeight="200.0" prefWidth="200.0" />
+                        <Label layoutX="27.0" layoutY="49.0" text="Todas as Minhas PlayLists" />
+                        <ComboBox layoutX="229.0" layoutY="44.0" prefWidth="150.0" />
+                        <TableView layoutX="27.0" layoutY="168.0" prefHeight="241.0" prefWidth="233.0">
+                          <columns>
+                            <TableColumn prefWidth="99.0" text="Nome Musica" />
+                            <TableColumn prefWidth="51.0" text="Artista" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="332.0" layoutY="292.0" mnemonicParsing="false" text="Remover Música" />
+                        <Button layoutX="332.0" layoutY="230.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="113.0" text="Criar PlayList" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Minhas Compas">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView layoutX="156.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                  </AnchorPane>
               </content>
             </Tab>
         </tabs>
