@@ -182,8 +182,8 @@ public class Fachada implements IFachada {
 
 	//USUARIO
 
-	public Usuario procurarUsuario(String login) throws ElementoNaoExisteException {
-		return controlUsuario.procurarUsuario(login);
+	public boolean procurarUsuario(String login,String senha) throws ElementoNaoExisteException {
+		return controlUsuario.procurarUsuario(login,senha);
 	}
 	public void removerElemento(Usuario elemento) throws ElementoNaoExisteException {
 		controlUsuario.removerElemento(elemento);
@@ -235,7 +235,7 @@ public class Fachada implements IFachada {
 	public void atualizarElemento(Vendas elemento) throws ElementoNaoExisteException {
 		controlVendas.atualizarElemento(elemento);
 	}
-
+	
 
 
 

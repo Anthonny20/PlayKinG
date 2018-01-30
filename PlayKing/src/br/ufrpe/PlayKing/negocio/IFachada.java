@@ -82,7 +82,7 @@ public interface IFachada {
 	
 	
 	
-	public Usuario procurarUsuario(String login) throws ElementoNaoExisteException;
+	public boolean procurarUsuario(String login,String senha) throws ElementoNaoExisteException;
 	public void removerElemento(Usuario elemento) throws ElementoNaoExisteException;
 	public boolean existeElemento(Usuario elemento);
 	public void cadastrarElemento(Usuario elemento) throws ElementoJaExisteException;

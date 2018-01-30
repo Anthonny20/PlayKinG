@@ -77,21 +77,9 @@ public class ControladorUsuario implements IControladorUsuario {
 	
 
 
-	public Usuario procurarUsuario(String login) throws ElementoNaoExisteException {
-		Usuario resultado = null;
-		
-		try {
-			if(login!=null) {
-				 resultado = repo.procurarUsuario(login);	
-		}else {
-			throw new ElementoNaoExisteException(login);
-		} 
-		}	catch (ElementoNaoExisteException e) {
-				e.printStackTrace();
-		}
-		return resultado;
-		}
-	
+	public boolean procurarUsuario(String login,String senha) throws ElementoNaoExisteException {
+		return this.repo.procurarUsuario(login, senha);
+	}
 	public List<Usuario> listarUsuarios() {
 		return repo.listarUsuarios();
 	}
@@ -99,30 +87,14 @@ public class ControladorUsuario implements IControladorUsuario {
 
 
 	public boolean loginUsuario(String login,String senha)throws ElementoNaoExisteException {
-		boolean loginEfetuado = false;
-		
-		try { 
-			if(login!= null && senha !=null ) {
-		
-			Usuario auxiliar = this.procurarUsuario(login);
-			
-			if(auxiliar.getSenhaUsuario().equals(senha)) {
-				loginEfetuado = true;
-				
-		}
-			else {
-				throw new ElementoNaoExisteException(login);
-			}}} catch (ElementoNaoExisteException e) {
-					e.printStackTrace();
-		}
-					return loginEfetuado;
+		return procurarUsuario(login, senha);
 				}
 
 	public boolean existeUsuarioLogin(String login) {
 		
 		return repo.existeUsuarioLogin(login);
 	}
-		
+
 		
 
 }

@@ -20,7 +20,7 @@ public interface IControladorUsuario {
 	void atualizarElemento(Usuario elemento) throws ElementoNaoExisteException;
 
 
-	Usuario procurarUsuario(String login) throws ElementoNaoExisteException;
+	boolean procurarUsuario(String login,String senha) throws ElementoNaoExisteException;
 
 	List<Usuario> listarUsuarios();
 
