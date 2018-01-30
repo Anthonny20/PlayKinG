@@ -7,6 +7,10 @@ import java.util.Iterator;
 
 public class Usuario implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5944654419124785206L;
 	private String nomeUsuario;
 	private String loginUsuario;
 	private String senhaUsuario;

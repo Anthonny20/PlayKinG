@@ -6,6 +6,10 @@ import java.time.LocalDateTime;
 public class Vendas implements Serializable {
 
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7846839723993980645L;
 	private LocalDateTime dataVenda;
 	private Album albumVenda;
 	private Usuario usuarioVenda;
