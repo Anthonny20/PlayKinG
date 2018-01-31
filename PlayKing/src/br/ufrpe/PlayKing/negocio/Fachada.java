@@ -17,6 +17,8 @@ import br.ufrpe.PlayKing.dados.RepositorioMusica;
 import br.ufrpe.PlayKing.dados.RepositorioPlayList;
 import br.ufrpe.PlayKing.dados.RepositorioUsuario;
 import br.ufrpe.PlayKing.dados.RepositorioVendas;
+import br.ufrpe.PlayKing.exception.AlbumJaCadastradoException;
+import br.ufrpe.PlayKing.exception.ArtistaJaCadastradoException;
 import br.ufrpe.PlayKing.exception.ElementoJaExisteException;
 import br.ufrpe.PlayKing.exception.ElementoNaoExisteException;
 import br.ufrpe.PlayKing.exception.UsuarioJaCadastradoException;
@@ -48,52 +50,42 @@ public class Fachada implements IFachada {
 
 		}return instance;
 	}
-
-	//ALBUM
-
-
-
-
-
-	/*public void adicionarMusicaAlbum(Album album, Musica musica) {
-		controlAlbum.adicionarMusicaAlbum(album, musica);
-	}
-
-	public List<Musica> listarMusicasAlbum(Album album) {
-		return controlAlbum.listarMusicasAlbum(album);
-	}*/
-
-
-
-
+	
+	//Album
+	
 	public void removerElemento(Album elemento) throws ElementoNaoExisteException {
-		this.controlAlbum.removerElemento(elemento);
+		controlAlbum.removerElemento(elemento);
 	}
-	public List<Album> listarAlbum() {
-		return controlAlbum.listarAlbum();
-	}
-	public void cadastrarElemento(Album elemento) throws ElementoJaExisteException {
+	public void cadastrarElemento(Album elemento) throws ElementoJaExisteException, AlbumJaCadastradoException {
 		controlAlbum.cadastrarElemento(elemento);
 	}
 	public void atualizarElemento(Album elemento) throws ElementoNaoExisteException {
 		controlAlbum.atualizarElemento(elemento);
 	}
+	public List<Album> listarAlbuns() {
+		return controlAlbum.listarAlbuns();
+	}
+	public Album buscarElemento(Album elemento) {
+		return controlAlbum.buscarElemento(elemento);
+	}
 	public boolean existeElemento(Album elemento) {
 		return controlAlbum.existeElemento(elemento);
 	}
-
 	public List<Musica> listarMusicasAlbum(Album album) {
 		return controlAlbum.listarMusicasAlbum(album);
 	}
-	public void adicionarMusicaAlbum(Album album, Musica musica)
-			throws ElementoJaExisteException, ElementoNaoExisteException {
-		controlAlbum.adicionarMusicaAlbum(album, musica);
-	}
-	//ARTISTA
+	
+	
+	
+	
+	
+	//Artista
+	
+	
 	public void removerElemento(Artista elemento) throws ElementoNaoExisteException {
 		controlArtista.removerElemento(elemento);
 	}
-	public void cadastrarElemento(Artista elemento) throws ElementoJaExisteException {
+	public void cadastrarElemento(Artista elemento) throws ElementoJaExisteException, ArtistaJaCadastradoException {
 		controlArtista.cadastrarElemento(elemento);
 	}
 	public void atualizarElemento(Artista elemento) throws ElementoNaoExisteException {
@@ -102,30 +94,28 @@ public class Fachada implements IFachada {
 	public boolean existeElemento(Artista elemento) {
 		return controlArtista.existeElemento(elemento);
 	}
-	public List<Artista> listarArtista() {
-		return controlArtista.listarArtista();
-	}
-	public void adicionarMusicaArtista(Artista artista, Musica musica) throws ElementoJaExisteException, ElementoNaoExisteException {
+	public void adicionarMusicaArtista(Artista artista, Musica musica)
+			throws ElementoJaExisteException, ElementoNaoExisteException {
 		controlArtista.adicionarMusicaArtista(artista, musica);
 	}
-
-
-
-
-
-	//MUSICA
-
-
-	public List<Musica> listarTodasMusicas() {
-		return controlMusica.listarTodasMusicas();
+	public List<Artista> listarArtistas() {
+		return controlArtista.listarArtistas();
 	}
 
-
+	
+	
+	
+	//MUSICA
+	
+	
 	public void removerElemento(Musica musica) throws ElementoNaoExisteException {
 		controlMusica.removerElemento(musica);
 	}
 	public List<Musica> buscarMusica(String nome) throws ElementoNaoExisteException {
 		return controlMusica.buscarMusica(nome);
+	}
+	public List<Musica> listarMusicas() {
+		return controlMusica.listarMusicas();
 	}
 	public void cadastrarElemento(Musica musica) throws ElementoJaExisteException {
 		controlMusica.cadastrarElemento(musica);
@@ -135,26 +125,16 @@ public class Fachada implements IFachada {
 	}
 	public boolean existeElemento(Musica musica) {
 		return controlMusica.existeElemento(musica);
+		
+		
+		
+		
+	//PlayList
+		
+		
 	}
-	public List<Musica> listarElemento() {
-		return controlMusica.listarElemento();
-	}
-
-
-
-
-	//PLAYLIST
-
-
-	public void adicionarMusicaPlayList(PlayList playList, Musica musica) throws ElementoJaExisteException, ElementoNaoExisteException {
-		controlPlayList.adicionarMusicaPlayList(playList, musica);
-	}
-
 	public void removerElemento(PlayList elemento) throws ElementoNaoExisteException {
 		controlPlayList.removerElemento(elemento);
-	}
-	public List<PlayList> listarElementos() {
-		return controlPlayList.listarElementos();
 	}
 	public boolean existeElemento(PlayList elemento) {
 		return controlPlayList.existeElemento(elemento);
@@ -165,79 +145,59 @@ public class Fachada implements IFachada {
 	public void atualizarElemento(PlayList elemento) throws ElementoNaoExisteException {
 		controlPlayList.atualizarElemento(elemento);
 	}
+	public void adicionarMusicaPlayList(PlayList playList, Musica musica)
+			throws ElementoJaExisteException, ElementoNaoExisteException {
+		controlPlayList.adicionarMusicaPlayList(playList, musica);
+	}
 	public void removerMusicaPlayList(PlayList playList, Musica musica) throws ElementoNaoExisteException {
 		controlPlayList.removerMusicaPlayList(playList, musica);
-	}
-	public List<PlayList> listarTodasPlayLists() {
-		return controlPlayList.listarTodasPlayLists();
 	}
 	public List<Musica> listarTodasMusicasDaPlayList(PlayList playList) {
 		return controlPlayList.listarTodasMusicasDaPlayList(playList);
 	}
 
+	public List<PlayList> listarPlayLists() {
 
-
-
-
-
-	//USUARIO
-
-	public boolean procurarUsuario(String login,String senha) throws ElementoNaoExisteException {
-		return controlUsuario.procurarUsuario(login,senha);
+		return controlPlayList.listarPlayLists();
 	}
+	
+
+	
+	
+	
+	//Usuários
+	
 	public void removerElemento(Usuario elemento) throws ElementoNaoExisteException {
 		controlUsuario.removerElemento(elemento);
 	}
 	public boolean existeElemento(Usuario elemento) {
 		return controlUsuario.existeElemento(elemento);
 	}
-	public void cadastrarElemento(Usuario elemento) throws ElementoJaExisteException {
+	public void cadastrarElemento(Usuario elemento) throws ElementoJaExisteException, UsuarioJaCadastradoException {
 		controlUsuario.cadastrarElemento(elemento);
 	}
 	public void atualizarElemento(Usuario elemento) throws ElementoNaoExisteException {
 		controlUsuario.atualizarElemento(elemento);
 	}
+	public boolean procurarUsuario(String login, String senha) throws ElementoNaoExisteException {
+		return controlUsuario.procurarUsuario(login, senha);
+	}
 	public boolean loginUsuario(String login, String senha) throws ElementoNaoExisteException {
 		return controlUsuario.loginUsuario(login, senha);
 	}
-
-	public List<Usuario> listarUsuarios() {
-		return controlUsuario.listarUsuarios();
-	}
-	public boolean existeUsuario(Usuario usuario) {
-		return controlUsuario.existeUsuarioLogin(usuario.getLoginUsuario());
-
-	}
-
 	public boolean existeUsuarioLogin(String login) {
 		return controlUsuario.existeUsuarioLogin(login);
 	}
+	public List<Usuario> listarUsuarios() {
 
-
-
-
-	//VENDAS
-	public List<Vendas> listarVendas() {
-		return controlVendas.listarVendas();
-	}
-	public List<Vendas> listarVendasPorData(LocalDateTime dataVenda) {
-		return controlVendas.listarVendasPorData(dataVenda);
-	}
-	public void removerElemento(Vendas elemento) throws ElementoNaoExisteException {
-		controlVendas.removerElemento(elemento);
-	}
-	public boolean existeElemento(Vendas elemento) {
-		return controlVendas.existeElemento(elemento);
-	}
-	public void cadastrarElemento(Vendas elemento) throws ElementoJaExisteException {
-		controlVendas.cadastrarElemento(elemento);
-	}
-	public void atualizarElemento(Vendas elemento) throws ElementoNaoExisteException {
-		controlVendas.atualizarElemento(elemento);
+		return controlUsuario.listarUsuarios();
 	}
 	
+	
+	
+	
 
-
+	
 
 
 

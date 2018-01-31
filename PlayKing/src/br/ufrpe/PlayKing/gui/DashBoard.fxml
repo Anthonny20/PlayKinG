@@ -7,8 +7,6 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -73,7 +71,7 @@
          </image>
       </ImageView>
       <Button layoutX="644.0" layoutY="175.0" mnemonicParsing="false" text="Alterar Dados" />
-      <Button layoutX="652.0" layoutY="289.0" mnemonicParsing="false" text="Sair/Voltar" />
+      <Button fx:id="btnSairVolar" layoutX="652.0" layoutY="289.0" mnemonicParsing="false" onAction="#voltarUsuarioLogin" text="Sair/Voltar" />
       <TabPane layoutX="148.0" layoutY="1.0" prefHeight="520.0" prefWidth="476.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
             <Tab text="DashBoard">
@@ -82,61 +80,41 @@
                      <children>
                         <ListView fx:id="musicPlayerListView" layoutX="7.0" onMousePressed="#playMusicaSelecionada" prefHeight="267.0" prefWidth="469.0" style="-fx-background-radius: 8;" />
                         <TextField fx:id="musicNowPlaying" layoutX="7.0" layoutY="316.0" prefHeight="32.0" prefWidth="299.0" />
-                        <Button fx:id="btnStop" layoutX="86.0" layoutY="365.0" mnemonicParsing="false" onAction="#musicControl" text="Stop" textFill="#f20404">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Button>
                         <Button fx:id="btnBrowse" layoutX="313.0" layoutY="316.0" mnemonicParsing="false" onAction="#musicControl" text="Browse" />
                         <Button fx:id="btnLoadList" layoutX="380.0" layoutY="316.0" mnemonicParsing="false" onAction="#musicControl" text="Load PlayList" />
                         <Button fx:id="btnPlayer" layoutX="14.0" layoutY="365.0" mnemonicParsing="false" onAction="#btnPlayDashBoard" text="Play" />
                      </children></AnchorPane>
               </content>
             </Tab>
-            <Tab text="Meus Albúns">
+            <Tab text="Criar PlayLists">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView layoutX="14.0" layoutY="117.0" prefHeight="343.0" prefWidth="366.0">
-                          <columns>
-                            <TableColumn prefWidth="119.0" text="Nome Albúm" />
-                            <TableColumn minWidth="50.0" prefWidth="106.0" text="Artista" />
-                              <TableColumn prefWidth="139.0" text="Data de Lançamento" />
-                          </columns>
-                        </TableView>
-                        <Label layoutX="81.0" layoutY="52.0" text="Todos seus Albuns">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <Button layoutX="393.0" layoutY="205.0" mnemonicParsing="false" text="Play" />
-                        <Button layoutX="395.0" layoutY="335.0" mnemonicParsing="false" text="Delete" />
+                        <Button layoutX="182.0" layoutY="401.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="113.0" text="Criar PlayList" />
+                        <Label layoutX="65.0" layoutY="167.0" text="Nome Playlist" />
+                        <TextField fx:id="nomePlayListTxtField" layoutX="182.0" layoutY="164.0" />
                      </children></AnchorPane>
               </content>
             </Tab>
-            <Tab text="Minhas PlayLists">
+            <Tab text="Remover Musica">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ListView layoutX="138.0" layoutY="108.0" prefHeight="200.0" prefWidth="200.0" />
-                        <Label layoutX="27.0" layoutY="49.0" text="Todas as Minhas PlayLists" />
-                        <ComboBox layoutX="229.0" layoutY="44.0" prefWidth="150.0" />
-                        <TableView layoutX="27.0" layoutY="168.0" prefHeight="241.0" prefWidth="233.0">
-                          <columns>
-                            <TableColumn prefWidth="99.0" text="Nome Musica" />
-                            <TableColumn prefWidth="51.0" text="Artista" />
-                          </columns>
-                        </TableView>
-                        <Button layoutX="332.0" layoutY="292.0" mnemonicParsing="false" text="Remover Música" />
-                        <Button layoutX="332.0" layoutY="230.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="113.0" text="Criar PlayList" />
-                     </children></AnchorPane>
+                        <ComboBox fx:id="comboBoxPlayListsRemoverMusica" layoutX="192.0" layoutY="52.0" prefWidth="150.0" />
+                        <Label layoutX="97.0" layoutY="57.0" text="PlayLists" />
+                        <ListView fx:id="todasMusicasDaPlayList" layoutX="111.0" layoutY="133.0" prefHeight="230.0" prefWidth="254.0" />
+                        <Button layoutX="178.0" layoutY="407.0" mnemonicParsing="false" text="Remover Música" />
+                     </children>
+                  </AnchorPane>
               </content>
             </Tab>
-            <Tab text="Minhas Compas">
+            <Tab text="Remover Playlist">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ListView layoutX="156.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" />
+                        <ComboBox fx:id="comboBoxPlayLists" layoutX="198.0" layoutY="85.0" prefWidth="150.0" />
+                        <Label layoutX="101.0" layoutY="90.0" text="PlayLists" />
+                        <Button layoutX="198.0" layoutY="302.0" mnemonicParsing="false" onAction="#btnRemoverPlayList" text="Remover" />
                      </children>
                   </AnchorPane>
               </content>

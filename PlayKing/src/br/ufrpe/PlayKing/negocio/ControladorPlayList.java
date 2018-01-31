@@ -11,21 +11,23 @@ import br.ufrpe.PlayKing.dados.RepositorioPlayList;
 import br.ufrpe.PlayKing.exception.ElementoJaExisteException;
 import br.ufrpe.PlayKing.exception.ElementoNaoExisteException;
 
-public class ControladorPlayList implements IControladorPlayList {
-
-	private RepositorioPlayList repo;
-	private IRepositorioGenerico<PlayList> repoPlayList;
+public class ControladorPlayList  {
+	
+	private IRepositorioGenerico<PlayList> repositorio;
+	private RepositorioPlayList<PlayList> repoPlayList;
+	
 
 	public ControladorPlayList(IRepositorioGenerico<PlayList> instancia) {
-		this.repo = RepositorioPlayList.getInstance();
-		this.repoPlayList = instancia;
+		this.repositorio = instancia;
+		this.repoPlayList = RepositorioPlayList.getInstance();
 	}
 
-	@Override
+	
 	public void removerElemento(PlayList elemento) throws ElementoNaoExisteException {
 		try {
 			if (elemento != null && this.existeElemento(elemento)) {
-				this.repo.removerElemento(elemento);
+				this.repositorio.removerElemento(elemento);
+				this.repositorio.salvarArquivo();
 			}else {
 				throw new ElementoNaoExisteException(elemento);
 			}
@@ -35,23 +37,24 @@ public class ControladorPlayList implements IControladorPlayList {
 
 	}
 
-	@Override
-	public List<PlayList> listarElementos() {
 
-		return repo.listarElementos();
+	public List<PlayList> listarPlayLists() {
+
+		return repositorio.listarElementos();
 	}
 
-	@Override
+	
 	public boolean existeElemento(PlayList elemento) {
-		return this.repo.existeElemento(elemento);
+		return this.repositorio.existeElemento(elemento);
 
 	}
 
-	@Override
+
 	public void cadastrarElemento(PlayList elemento) throws ElementoJaExisteException {
 		try {
 			if (elemento!=null && !this.existeElemento(elemento)) {
-				this.repo.cadastrarElemento(elemento);
+				this.repositorio.cadastrarElemento(elemento);
+				this.repositorio.salvarArquivo();
 			}else {
 				throw new ElementoJaExisteException(elemento);
 			}
@@ -61,11 +64,12 @@ public class ControladorPlayList implements IControladorPlayList {
 
 	}
 
-	@Override
+
 	public void atualizarElemento(PlayList elemento) throws ElementoNaoExisteException {
 		try {
 			if (elemento!= null && this.existeElemento(elemento)) {
-				this.repo.atualizarElemento(elemento);
+				this.repositorio.atualizarElemento(elemento);
+				this.repositorio.salvarArquivo();
 			} else {
 				throw new ElementoNaoExisteException(elemento);
 			}
@@ -78,8 +82,9 @@ public class ControladorPlayList implements IControladorPlayList {
 	public void adicionarMusicaPlayList(PlayList playList, Musica musica)throws ElementoJaExisteException,ElementoNaoExisteException {
 
 		try {
-			if (playList!=null && !repo.existeElemento(playList)&& musica!=null&& !playList.getUsuarioMusicasPlayList().contains(musica)) {
-				repo.adicionarMusicaPlayList(playList, musica);
+			if (playList!=null && !this.repoPlayList.existeElemento(playList)&& musica!=null&& !playList.getUsuarioMusicasPlayList().contains(musica)) {
+				this.repoPlayList.adicionarMusicaPlayList(playList, musica);
+				this.repoPlayList.salvarArquivo();
 			}
 			else 
 				throw new ElementoJaExisteException(musica);
@@ -95,8 +100,9 @@ public class ControladorPlayList implements IControladorPlayList {
 	public void removerMusicaPlayList(PlayList playList, Musica musica)throws ElementoNaoExisteException {
 		try {
 
-			if (playList!=null && repo.existeElemento(playList)&& musica!=null&& playList.getUsuarioMusicasPlayList().contains(musica)) {
-				repo.removerMusicaPlayList(playList, musica);
+			if (playList!=null && this.repoPlayList.existeElemento(playList)&& musica!=null&& playList.getUsuarioMusicasPlayList().contains(musica)) {
+				this.repoPlayList.removerMusicaPlayList(playList, musica);
+				this.repoPlayList.salvarArquivo();
 			}
 
 			else 
@@ -106,12 +112,10 @@ public class ControladorPlayList implements IControladorPlayList {
 		}
 
 	}
-	public List<PlayList> listarTodasPlayLists() {
-		return repo.listarElementos();
-	}
+	
 
 	public List<Musica> listarTodasMusicasDaPlayList(PlayList playList) {
-		return repo.listarTodasMusicasDaPlayList(playList);
+		return repoPlayList.listarTodasMusicasDaPlayList(playList);
 	}
 
 

@@ -29,7 +29,7 @@ public class RepositorioArtista<T> extends RepositorioGenerico<Artista> implemen
 
 	public static RepositorioArtista<Artista> getInstance() {
 		if(instance == null) {
-			instance = new RepositorioArtista<Artista>();
+			instance =  lerArquivo();
 		}return instance;
 	}
 
@@ -43,6 +43,7 @@ public class RepositorioArtista<T> extends RepositorioGenerico<Artista> implemen
 		for (int i = 0; i <artistas.size(); i++) {
 			if (this.artistas.get(i).getNomeArtista().equals(artista.getNomeArtista())) {
 				this.musicasArtista.add(musica);
+				this.salvarArquivo();
 			}
 			
 		}
@@ -103,8 +104,5 @@ public class RepositorioArtista<T> extends RepositorioGenerico<Artista> implemen
 
 	
 	
-	//public listarMusicasArtista
-	//public listarAlbunsArtista
-
 
 }

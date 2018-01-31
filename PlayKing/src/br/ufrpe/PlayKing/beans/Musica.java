@@ -1,22 +1,31 @@
 package br.ufrpe.PlayKing.beans;
 
+import java.io.File;
 import java.io.Serializable;
+
+import javafx.stage.FileChooser;
 
 public class Musica implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8787985677751117131L;
 	private String nomeMusica;
 	private String tempoMusica;
-	private double precoMusica;
-	private Artista artistaMusica;
+	private Album albumMusica;
+
+	private File musicFile;
 	
 
 
-	public Musica(String nomeMusica, String tempoMusica, double precoMusica,Artista artistaMusica) {
+	public Musica(String nomeMusica, String tempoMusica,Album albumMusica,File musicFile) {
 		super();
 		this.nomeMusica = nomeMusica;
 		this.tempoMusica = tempoMusica;
-		this.precoMusica = precoMusica;
-		this.artistaMusica = artistaMusica;
+		this.albumMusica = albumMusica;
+		
+		this.musicFile = musicFile;
 	}
 	public Musica() {}
 	public String getNomeMusica() {
@@ -31,60 +40,42 @@ public class Musica implements Serializable {
 	public void setTempoMusica(String tempoMusica) {
 		this.tempoMusica = tempoMusica;
 	}
-	public double getPrecoMusica() {
-		return precoMusica;
-	}
-	public void setPrecoMusica(double precoMusica) {
-		this.precoMusica = precoMusica;
-	}
+
 
 	
 	
 
-	public Artista getArtistaMusica() {
-		return artistaMusica;
+	public Album getAlbumMusica() {
+		return albumMusica;
 	}
-	public void setArtistaMusica(Artista artistaMusica) {
-		this.artistaMusica = artistaMusica;
+	public void setAlbumMusica(Album albumMusica) {
+		this.albumMusica = albumMusica;
 	}
+	public File getMusicFile() {
+		return musicFile;
+	}
+	public void setMusicFile(File musicFile) {
+		this.musicFile = musicFile;
+	}
+	
 	@Override
 	public String toString() {
 		
 		
-		return "\nNome da Música : "+this.getNomeMusica()+"\n"+
-			   "Duração da Música : "+this.getTempoMusica()+"\n"+
-			   "Artista : "+this.getArtistaMusica()+"\n"+
-			   "Preço da Música : "+this.getPrecoMusica();
+		return "Nome da Música : "+this.getNomeMusica()+
+			   "/Duração da Música : "+this.getTempoMusica()+
+			   "/Album: "+this.getAlbumMusica();
+			   
+
 	}
-
-
 	
 
-	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Musica other = (Musica) obj;
-		if (artistaMusica == null) {
-			if (other.artistaMusica != null)
-				return false;
-		} else if (!artistaMusica.equals(other.artistaMusica))
-			return false;
-		if (nomeMusica == null) {
-			if (other.nomeMusica != null)
-				return false;
-		} else if (!nomeMusica.equals(other.nomeMusica))
-			return false;
-		if (Double.doubleToLongBits(precoMusica) != Double.doubleToLongBits(other.precoMusica))
-			return false;
-		if (tempoMusica == null) {
-			if (other.tempoMusica != null)
-				return false;
-		} else if (!tempoMusica.equals(other.tempoMusica))
-			return false;
-		return true;
-	}}
+		boolean resultado = false;
+				if (obj instanceof Musica && ((Musica)obj).getNomeMusica().equals(nomeMusica)) {
+					resultado = true;
+					
+				}return resultado;
+	}
+	
+}

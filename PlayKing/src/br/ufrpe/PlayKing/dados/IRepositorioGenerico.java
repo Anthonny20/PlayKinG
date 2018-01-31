@@ -12,5 +12,8 @@ public interface IRepositorioGenerico<T> {
 	void atualizarElemento(T elemento)throws ElementoNaoExisteException;
 	void removerElemento(T elemento) throws ElementoNaoExisteException;
 	boolean existeElemento(T elemento);
-
+	T buscarElemento(T elemento);
+	 void salvarArquivo();
+	
+	 
 }

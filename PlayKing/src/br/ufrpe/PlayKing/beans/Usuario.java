@@ -85,8 +85,7 @@ public class Usuario implements Serializable {
 	@Override
 	public String toString() {
 		
-		return "\nNome Usuario : "+this.getNomeUsuario()+"\n"+
-				"Todas Musicas : "+this.getMusicasUsuario()+"\n";
+		return "\nNome Usuario : "+this.getNomeUsuario();
 				
 	}
 	@Override

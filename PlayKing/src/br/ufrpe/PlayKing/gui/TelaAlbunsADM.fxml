@@ -5,10 +5,9 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -16,8 +15,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="664.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="664.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.PlayKing.gui.TelaAlbunsADMController">
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="664.0">
          <children>
@@ -55,18 +53,18 @@
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <Button fx:id="btnSairVoltar" layoutX="431.0" layoutY="319.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="94.0" text="Sair/Voltar" textFill="#a2a2a2">
+                              <Button fx:id="btnSairVoltar" layoutX="431.0" layoutY="319.0" mnemonicParsing="false" onAction="#btnSairAcao" prefHeight="50.0" prefWidth="94.0" text="Sair/Voltar" textFill="#a2a2a2">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Button>
                               <Label layoutX="81.0" layoutY="47.0" text="Nome do Albúm " />
-                              <Label layoutX="81.0" layoutY="176.0" text="Data de Criação" />
+                              <Label layoutX="64.0" layoutY="243.0" text="Data de Criação" />
                               <TextField fx:id="nomeAlbumTxtField" layoutX="199.0" layoutY="43.0" prefHeight="25.0" prefWidth="176.0" />
-                              <Button fx:id="btnCadastrarAlbum" layoutX="221.0" layoutY="296.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="83.0" text="Cadastar" />
-                              <DatePicker fx:id="datePickerCriacaoAlbum" layoutX="199.0" layoutY="172.0" prefHeight="25.0" prefWidth="176.0" />
-                              <ComboBox fx:id="albumArtistaComboBox" layoutX="201.0" layoutY="110.0" prefWidth="173.0" />
-                              <Label layoutX="106.0" layoutY="114.0" text="Artista" />
+                              <Button fx:id="btnCadastrarAlbum" layoutX="221.0" layoutY="296.0" mnemonicParsing="false" onAction="#btnCadastrarAlbumAcao" prefHeight="32.0" prefWidth="83.0" text="Cadastar" />
+                              <DatePicker fx:id="datePickerCriacaoAlbum" layoutX="188.0" layoutY="239.0" prefHeight="25.0" prefWidth="176.0" />
+                              <ComboBox fx:id="albumArtistaComboBox" layoutX="191.0" layoutY="114.0" prefHeight="81.0" prefWidth="192.0" />
+                              <Label layoutX="89.0" layoutY="146.0" text="Artista" />
                            </children>
                         </AnchorPane>
                      </content>
@@ -75,50 +73,52 @@
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TableView fx:id="tableViewMusica" layoutX="7.0" layoutY="7.0" prefHeight="352.0" prefWidth="322.0">
-                                 <columns>
-                                    <TableColumn prefWidth="90.0" text="Nome" />
-                                    <TableColumn prefWidth="95.0" text="Artista" />
-                                    <TableColumn prefWidth="135.0" text="Data de Criação" />
-                                 </columns>
-                              </TableView>
-                              <Button fx:id="btnRemoverAlbum" layoutX="366.0" layoutY="223.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="124.0" text="Remover" textFill="#ff3838">
-                                 <font>
-                                    <Font name="System Bold" size="18.0" />
-                                 </font>
-                              </Button>
-                              <Button fx:id="btnSairListarAlbum" layoutX="460.0" layoutY="324.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="60.0" text="Sair" textFill="#a2a2a2">
+                              <Button fx:id="btnRemoverAlbum" layoutX="66.0" layoutY="327.0" mnemonicParsing="false" onAction="#btnRemoverAlbumAcao" prefHeight="20.0" prefWidth="127.0" text="Remover" textFill="#ff3838">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="btnAtualizarAlbum" layoutX="366.0" layoutY="39.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="124.0" text="Atualizar">
+                              <Button fx:id="btnSairListarAlbum" layoutX="460.0" layoutY="324.0" mnemonicParsing="false" onAction="#btnSairAcao" prefHeight="35.0" prefWidth="60.0" text="Sair" textFill="#a2a2a2">
                                  <font>
-                                    <Font name="System Bold" size="18.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                               </Button>
+                              <Button fx:id="btnAtualizarAlbum" layoutX="304.0" layoutY="327.0" mnemonicParsing="false" onAction="#btnAtulizarAcao" prefHeight="20.0" prefWidth="138.0" text="Atualizar">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                              <ListView fx:id="listViewAlbuns" layoutX="14.0" layoutY="46.0" prefHeight="251.0" prefWidth="246.0" />
+                              <Label layoutX="83.0" layoutY="15.0" text="Lista de Albúns">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutX="263.0" orientation="VERTICAL" prefHeight="363.0" prefWidth="8.0" />
+                              <Label layoutX="359.0" layoutY="15.0" text="Atualizando">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="273.0" layoutY="81.0" text="Novo nome" />
+                              <TextField fx:id="novoNomeAlbumTxtField" layoutX="352.0" layoutY="77.0" />
                            </children>
                         </AnchorPane>
                      </content>
                   </Tab>
-                  <Tab text="Adicionar Músicas">
+                  <Tab text=" Músicas Album">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <ListView layoutX="27.0" layoutY="85.0" prefHeight="200.0" prefWidth="200.0" />
-                              <ListView layoutX="299.0" layoutY="85.0" prefHeight="200.0" prefWidth="200.0" />
-                              <Label layoutX="83.0" layoutY="47.0" text="Todos os Albúns" />
-                              <Label layoutX="353.0" layoutY="47.0" text="Todas as Músicas" />
-                              <Button layoutX="237.0" layoutY="160.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="54.0" text="ADD">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                              </Button>
-                              <Button layoutX="445.0" layoutY="340.0" mnemonicParsing="false" text="Sair/Voltar" textFill="#a2a2a2">
+                              <Label layoutX="76.0" layoutY="14.0" text="Todos os Albúns" />
+                              <Button layoutX="445.0" layoutY="340.0" mnemonicParsing="false" onAction="#btnSairAcao" text="Sair/Voltar" textFill="#a2a2a2">
                                  <font>
                                     <Font name="System Bold" size="13.0" />
                                  </font>
                               </Button>
+                              <ComboBox fx:id="albumComboBox" layoutX="196.0" layoutY="10.0" prefHeight="98.0" prefWidth="204.0" />
+                              <Label layoutX="212.0" layoutY="137.0" text="Músicas do Album " />
+                              <ListView fx:id="listViewMusica" layoutX="171.0" layoutY="175.0" prefHeight="165.0" prefWidth="212.0" />
                            </children>
                         </AnchorPane>
                     </content>
@@ -139,7 +139,7 @@
                                     <Font name="System Bold" size="18.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="btnSairVoltarRemoverMusicaAlbum" layoutX="430.0" layoutY="332.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="94.0" text="Sair/Voltar" textFill="#a2a2a2">
+                              <Button fx:id="btnSairVoltarRemoverMusicaAlbum" layoutX="430.0" layoutY="332.0" mnemonicParsing="false" onAction="#btnSairAcao" prefHeight="37.0" prefWidth="94.0" text="Sair/Voltar" textFill="#a2a2a2">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>

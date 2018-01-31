@@ -50,29 +50,27 @@ public class MainScreenController implements Initializable{
 	}
 
 	@FXML
-	public void btnInscricao (ActionEvent event)throws ElementoJaExisteException{
+	public void btnInscricao (ActionEvent event)throws ElementoJaExisteException, UsuarioJaCadastradoException{
 		
 		try {
 			String nomeUsuario = nomeUsuarioTxtField.getText().toString();
 			String loginUsuario = loginUsuarioTxtField.getText().toString();
 			String senhaUsuario = senhaUsuarioPassWordField.getText().toString();
-				if (!(nomeUsuario.equals("")|| loginUsuario.equals("")|| senhaUsuario.equals(""))) {
-						Usuario usuario = new Usuario(nomeUsuario, loginUsuario, senhaUsuario);
-						fachada.cadastrarElemento(usuario);
-				
-		
-		
-			
-			Alert alert = new Alert(AlertType.INFORMATION,"Usuário cadastrado com sucesso!");
-			alert.showAndWait();
+				if (nomeUsuario.equals("")|| loginUsuario.equals("")|| senhaUsuario.equals("")) {
+					
+					Alert alerta = new Alert(AlertType.INFORMATION,"Preencha todos os campos.");
+					alerta.show();
 			
 				}else {
-					Alert alert =  new Alert(AlertType.ERROR,"Campos preenchidos incorretamente");
-					alert.show();
+					Usuario usuario = new Usuario(nomeUsuario, loginUsuario, senhaUsuario);
+					fachada.cadastrarElemento(usuario);
+					Alert alerta1 = new Alert(AlertType.INFORMATION,"Usuário de Login: "+nomeUsuario+" ,cadastrado com sucesso!");
+					alerta1.showAndWait();
 				}
-		}catch (ElementoJaExisteException e) {
-				Alert alert = new Alert(AlertType.ERROR,"Login já em uso.");
-				alert.show();
+		}catch (UsuarioJaCadastradoException e) {
+			Alert alert = new Alert(AlertType.ERROR,"Login : "+this.loginUsuarioTxtField.getText()+" já em uso, preencha seus dados novamente com um login diferente.");
+			alert.showAndWait();	
+			e.printStackTrace();
 		}
 		finally {
 			

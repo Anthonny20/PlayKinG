@@ -7,28 +7,30 @@ import br.ufrpe.PlayKing.beans.Album;
 import br.ufrpe.PlayKing.beans.Musica;
 import br.ufrpe.PlayKing.dados.IRepositorioGenerico;
 import br.ufrpe.PlayKing.dados.RepositorioAlbum;
+import br.ufrpe.PlayKing.exception.AlbumJaCadastradoException;
 import br.ufrpe.PlayKing.exception.ElementoJaExisteException;
 import br.ufrpe.PlayKing.exception.ElementoNaoExisteException;
 import br.ufrpe.PlayKing.exception.UsuarioJaCadastradoException;
 
-public class ControladorAlbum implements IControladorAlbum {
+public class ControladorAlbum {
 
-	private IRepositorioGenerico<Album> repoAlbum;
-	private RepositorioAlbum repo;
+	
+	private IRepositorioGenerico<Album> repositorio;
+	private RepositorioAlbum<Album> repoAlbum;
 
 	public ControladorAlbum(IRepositorioGenerico<Album> instancia) {
 
-		this.repoAlbum = instancia; 
-		this.repo = RepositorioAlbum.getInstance();
-		
+
+		this.repositorio = instancia;
+		this.repoAlbum = RepositorioAlbum.getInstance();
 	}
 
-	@Override
 	public void removerElemento(Album elemento)throws ElementoNaoExisteException{
 		try {
-			if(elemento !=null && this.repoAlbum.existeElemento(elemento)) {
+			if(elemento !=null && this.repositorio.existeElemento(elemento)) {
 
-				this.repoAlbum.removerElemento(elemento);
+				this.repositorio.removerElemento(elemento);
+				this.repositorio.salvarArquivo();
 
 			}else {
 				throw new ElementoNaoExisteException(elemento);
@@ -41,37 +43,36 @@ public class ControladorAlbum implements IControladorAlbum {
 
 	}
 
-	@Override
-	public List<Album> listarElemento() {
-		return this.repoAlbum.listarElementos();
-	}
 
-	public List<Album> listarAlbum(){
-		return this.repoAlbum.listarElementos();
-	}
 
-	@Override
-	public void cadastrarElemento(Album elemento)throws ElementoJaExisteException{
-		try {
-			if (elemento!=null && !this.repoAlbum.existeElemento(elemento)) {
+	
 
-				this.repoAlbum.cadastrarElemento(elemento);
+
+	public void cadastrarElemento(Album elemento)throws ElementoJaExisteException,AlbumJaCadastradoException{
+		
+			if (elemento==null) {
+				throw new IllegalArgumentException("Arguemto inválido");
+				
+			}
+			else if (!this.repositorio.existeElemento(elemento)) {
+
+				this.repositorio.cadastrarElemento(elemento);
+				this.repositorio.salvarArquivo();
 
 			}else {
-				throw new ElementoJaExisteException(elemento);
+				throw new AlbumJaCadastradoException(elemento.getNomeAlbum());
 			}
-		} catch (ElementoJaExisteException e) {
-			e.printStackTrace();
-		}
+		} 
+		
 
 
-	}
+	
 
-	@Override
 	public void atualizarElemento(Album elemento) throws ElementoNaoExisteException{
 		try {
-			if(elemento !=null && this.repoAlbum.existeElemento(elemento)) {
-				this.repoAlbum.atualizarElemento(elemento);
+			if(elemento !=null && this.repositorio.existeElemento(elemento)) {
+				this.repositorio.atualizarElemento(elemento);
+				this.repositorio.salvarArquivo();
 			}else {
 				throw new ElementoNaoExisteException(elemento);
 			}
@@ -82,41 +83,36 @@ public class ControladorAlbum implements IControladorAlbum {
 
 	}
 
-	@Override
+	public List<Album> listarAlbuns() {
+		return repositorio.listarElementos();
+	}
+
+	public Album buscarElemento(Album elemento) {
+		return repositorio.buscarElemento(elemento);
+	}
+
 	public boolean existeElemento(Album elemento) {
-		return this.repoAlbum.existeElemento(elemento);
+		return this.repositorio.existeElemento(elemento);
 	}
 
 
 
 public List<Musica> listarMusicasAlbum(Album album) {
 		List<Musica> todasMusicasAlbum = new ArrayList<>();
-		if(repo != null&& album!= null) 
+		if(repositorio != null&& album!= null) 
 		{		
-			todasMusicasAlbum =repo.listarMusicasAlbum(album);
+			todasMusicasAlbum =repoAlbum.listarMusicasAlbum(album);
 		}return todasMusicasAlbum;
 
 	}
 
-	public void adicionarMusicaAlbum(Album album, Musica musica) throws ElementoJaExisteException,ElementoNaoExisteException {
-		
-		try {
-			if (this.repo.existeElemento(album) && musica!=null) {
-
-				repo.adicionarMusicaAlbum(album, musica);
-
-			}
-			else {
-				throw new ElementoNaoExisteException(album);
-				
-			}
-		} catch (ElementoNaoExisteException e) {
-				e.printStackTrace();
-		}
+	
 
 
 	}
-	}
+
+	
+	
 
 
 

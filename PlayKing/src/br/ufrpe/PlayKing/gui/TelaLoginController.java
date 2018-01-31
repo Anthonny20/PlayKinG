@@ -9,7 +9,7 @@ import br.ufrpe.PlayKing.exception.ElementoJaExisteException;
 import br.ufrpe.PlayKing.exception.ElementoNaoExisteException;
 import br.ufrpe.PlayKing.negocio.ControladorUsuario;
 import br.ufrpe.PlayKing.negocio.Fachada;
-import br.ufrpe.PlayKing.negocio.IControladorUsuario;
+
 import br.ufrpe.PlayKing.negocio.IFachada;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -62,7 +62,7 @@ public class TelaLoginController implements Initializable{
 	    	String loginUsuario = loginTxtField.getText().toString();
 	    	String senhaUsuario = senhaPassWordField.getText().toString();
 	    	
-	    	Usuario u = new Usuario("1", "1", "1");
+	    	
 	    	
 	    	
 	    	try {
@@ -85,12 +85,14 @@ public class TelaLoginController implements Initializable{
 							Stage janelaUsuario = (Stage)((Node)event.getSource()).getScene().getWindow();
 							janelaUsuario.setScene(telaUsuario);
 							janelaUsuario.show();
-							Alert alert = new Alert(AlertType.INFORMATION,"Usuário "+loginTxtField+" logado com sucesso ao PlayKinG");
+							
+							
+							Alert alert = new Alert(AlertType.INFORMATION,"Usuário "+this.loginTxtField.getText()+" logado com sucesso ao PlayKinG");
 							alert.setTitle("Bem-vindo");
 							alert.showAndWait();
 				}
 				else {
-					Alert alert =  new Alert(AlertType.ERROR,"Login e senha informados estão errados");
+					Alert alert =  new Alert(AlertType.ERROR,"Login ou senha informados estão errados");
 					alert.setTitle("Erro ao conectar");
 					alert.showAndWait();
 				}

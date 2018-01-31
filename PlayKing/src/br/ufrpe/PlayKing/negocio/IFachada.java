@@ -10,103 +10,71 @@ import br.ufrpe.PlayKing.beans.Musica;
 import br.ufrpe.PlayKing.beans.PlayList;
 import br.ufrpe.PlayKing.beans.Usuario;
 import br.ufrpe.PlayKing.beans.Vendas;
+import br.ufrpe.PlayKing.exception.AlbumJaCadastradoException;
+import br.ufrpe.PlayKing.exception.ArtistaJaCadastradoException;
 import br.ufrpe.PlayKing.exception.ElementoJaExisteException;
 import br.ufrpe.PlayKing.exception.ElementoNaoExisteException;
 import br.ufrpe.PlayKing.exception.UsuarioJaCadastradoException;
 
 public interface IFachada {
 
-
-	public void removerElemento(Album elemento)throws ElementoNaoExisteException;
-
-	public void cadastrarElemento(Album elemento)throws ElementoJaExisteException;
-
-	public void atualizarElemento(Album elemento) throws ElementoNaoExisteException;
-
-	public boolean existeElemento(Album elemento);
-
-	public List<Album> listarAlbum();
-
-	public List<Musica> listarMusicasAlbum(Album album);
-
-	public void adicionarMusicaAlbum(Album album, Musica musica) throws ElementoJaExisteException,ElementoNaoExisteException;
-
-
-
-
-
-
-	public void removerElemento(Artista elemento)throws ElementoNaoExisteException;
-
-	public void cadastrarElemento(Artista elemento)throws ElementoJaExisteException;
-
-	public void atualizarElemento(Artista elemento) throws ElementoNaoExisteException;
-
-	public boolean existeElemento(Artista elemento);
-
-	public List<Artista> listarArtista();
-
-	public void adicionarMusicaArtista(Artista artista, Musica musica) throws ElementoJaExisteException, ElementoNaoExisteException;
-
-
-
-	public void removerElemento(Musica musica) throws ElementoNaoExisteException;
-
-	public 	void cadastrarElemento(Musica musica) throws ElementoJaExisteException;
-
-	public 	void atualizarElemento(Musica musica) throws ElementoNaoExisteException;
-
-	public 	boolean existeElemento(Musica musica);
-
-	public 	List<Musica> listarElemento();
-
-
-
-	public void adicionarMusicaPlayList(PlayList playList, Musica musica) throws ElementoJaExisteException, ElementoNaoExisteException;
-
-	public void removerElemento(PlayList elemento) throws ElementoNaoExisteException;
-
-	public List<PlayList> listarElementos();
-
-	public boolean existeElemento(PlayList elemento);
-
-	public void cadastrarElemento(PlayList elemento) throws ElementoJaExisteException;
-
-	public void atualizarElemento(PlayList elemento) throws ElementoNaoExisteException;
-
-	public void removerMusicaPlayList(PlayList playList, Musica musica) throws ElementoNaoExisteException;
-
-	public List<Musica> listarTodasMusicasDaPlayList(PlayList playList);
-
+	//Album
+	void removerElemento(Album elemento) throws ElementoNaoExisteException;
+	void cadastrarElemento(Album elemento) throws ElementoJaExisteException, AlbumJaCadastradoException;
+	void atualizarElemento(Album elemento) throws ElementoNaoExisteException;
+	List<Album> listarAlbuns();
+	Album buscarElemento(Album elemento);
+	boolean existeElemento(Album elemento);
+	List<Musica> listarMusicasAlbum(Album album);
 	
-	
-	
-	
-	public boolean procurarUsuario(String login,String senha) throws ElementoNaoExisteException;
-	public void removerElemento(Usuario elemento) throws ElementoNaoExisteException;
-	public boolean existeElemento(Usuario elemento);
-	public void cadastrarElemento(Usuario elemento) throws ElementoJaExisteException;
-	public void atualizarElemento(Usuario elemento) throws ElementoNaoExisteException;
-	public boolean loginUsuario(String login, String senha) throws ElementoNaoExisteException;
-	
-	public List<Usuario> listarUsuarios();
-	public boolean existeUsuario(Usuario usuario);
-	public boolean existeUsuarioLogin(String login);
-	
-	
-	
-	
-	
-	public List<Vendas> listarVendas();
-	public List<Vendas> listarVendasPorData(LocalDateTime dataVenda);
-	public void removerElemento(Vendas elemento) throws ElementoNaoExisteException;
-	public boolean existeElemento(Vendas elemento);
-	public void cadastrarElemento(Vendas elemento) throws ElementoJaExisteException;
-	public void atualizarElemento(Vendas elemento) throws ElementoNaoExisteException;
-	
-	
-	
-	
+
+
+	//Artista
+
+
+	void removerElemento(Artista elemento) throws ElementoNaoExisteException;
+	void cadastrarElemento(Artista elemento) throws ElementoJaExisteException, ArtistaJaCadastradoException;
+	void atualizarElemento(Artista elemento) throws ElementoNaoExisteException;
+	boolean existeElemento(Artista elemento);
+	void adicionarMusicaArtista(Artista artista, Musica musica)
+			throws ElementoJaExisteException, ElementoNaoExisteException;
+	List<Artista> listarArtistas();
+
+	//MUSICA
+
+
+	void removerElemento(Musica musica) throws ElementoNaoExisteException;
+	List<Musica> buscarMusica(String nome) throws ElementoNaoExisteException;
+	List<Musica> listarMusicas();
+	void cadastrarElemento(Musica musica) throws ElementoJaExisteException;
+	void atualizarElemento(Musica musica) throws ElementoNaoExisteException;
+	boolean existeElemento(Musica musica);
+
+
+	//PlayLists
+	void removerElemento(PlayList elemento) throws ElementoNaoExisteException;
+	boolean existeElemento(PlayList elemento);
+	void cadastrarElemento(PlayList elemento) throws ElementoJaExisteException;
+	void atualizarElemento(PlayList elemento) throws ElementoNaoExisteException;
+	void adicionarMusicaPlayList(PlayList playList, Musica musica)
+			throws ElementoJaExisteException, ElementoNaoExisteException;
+	void removerMusicaPlayList(PlayList playList, Musica musica) throws ElementoNaoExisteException;
+	List<Musica> listarTodasMusicasDaPlayList(PlayList playList);
+
+	List<PlayList> listarPlayLists();
+
+
+	//Usuários
+
+	void removerElemento(Usuario elemento) throws ElementoNaoExisteException;
+	boolean existeElemento(Usuario elemento);
+	void cadastrarElemento(Usuario elemento) throws ElementoJaExisteException, UsuarioJaCadastradoException;
+	void atualizarElemento(Usuario elemento) throws ElementoNaoExisteException;
+	boolean procurarUsuario(String login, String senha) throws ElementoNaoExisteException;
+	boolean loginUsuario(String login, String senha) throws ElementoNaoExisteException;
+	boolean existeUsuarioLogin(String login);
+	List<Usuario> listarUsuarios();
+
 
 
 }

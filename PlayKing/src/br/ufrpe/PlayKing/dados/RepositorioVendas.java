@@ -21,7 +21,7 @@ public class RepositorioVendas<T> extends RepositorioGenerico<Vendas>{
 	 * 
 	 */
 	private static final long serialVersionUID = 6648862637612711057L;
-//TODO IMPLEMENTAR
+
 	private static RepositorioVendas<Vendas> instance;
 	private ArrayList<Vendas> vendas;
 	

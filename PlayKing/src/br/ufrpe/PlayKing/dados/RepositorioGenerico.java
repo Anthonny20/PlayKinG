@@ -16,42 +16,54 @@ import br.ufrpe.PlayKing.beans.Artista;
 
 
 public abstract class RepositorioGenerico <T> implements IRepositorioGenerico<T>,Serializable{
-	
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -1373934370615586771L;
 	protected ArrayList<T> elementos;
 	private static RepositorioGenerico<?> instance;
-	
+
 	public static RepositorioGenerico<?> getInstance(){
 		if (instance == null) {
 			instance = lerArquivo();
 		}
 		return instance;
 	}
-	
-	
+
+
 	public RepositorioGenerico() {
 		this.elementos = new ArrayList<>();
 	}
-	
+
+	@Override
 	public void  cadastrarElemento(T elemento) {
 		this.elementos.add(elemento);
+		this.salvarArquivo();
 	}
+
+	@Override
 	public List<T> listarElementos(){
 		return Collections.unmodifiableList(this.elementos);
 	}
+
+	@Override
 	public void removerElemento (T elemento) {
 		int index = this.elementos.indexOf(elemento);
 		if(index >=0)
-		this.elementos.remove(elemento);
+			this.elementos.remove(elemento);
+		this.salvarArquivo();
 	}
+
+	@Override
 	public void atualizarElemento(T elemento) {
 		int index = this.elementos.indexOf(elemento);
 		if(index >=0)
 			this.elementos.set(index, elemento);
+		this.salvarArquivo();
 	}
+
+	@Override
 	public boolean existeElemento(T elemento) {
 		boolean existe = false;
 		for (int i = 0; i < elementos.size(); i++) {
@@ -60,25 +72,37 @@ public abstract class RepositorioGenerico <T> implements IRepositorioGenerico<T>
 			}
 		}return existe;
 	}
-	
+
+	public T buscarElemento(T elemento) {
+		T elemetoBuscado = null;
+		if (existeElemento(elemetoBuscado)) {
+			for (T t : elementos) {
+				if (elemento.equals(t)) {
+					elemetoBuscado = t;
+				}
+			}
+		}
+		return elemetoBuscado;
+	}
+
 	public static RepositorioGenerico<?> lerArquivo(){
 		RepositorioGenerico<?> instance = null;
 		File in = new File("Genericos.txt");
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
-		
+
 		try {
 			fis = new FileInputStream(in);
 			ois = new ObjectInputStream(fis);
-			
-			
+
+
 			Object o = ois.readObject();
 			instance = (RepositorioGenerico<?>) o;
-			
+
 		} catch (Exception e) {
-				instance = RepositorioGenerico.getInstance();
-				
-				
+			instance = RepositorioGenerico.getInstance();
+
+
 		}finally {
 			if (ois!=null) {
 				try {
@@ -89,20 +113,20 @@ public abstract class RepositorioGenerico <T> implements IRepositorioGenerico<T>
 			}
 		}
 		return instance;
-		
+
 	}
 	public void salvarArquivo(){
 		File out = new File("Genericos.txt");
-		
+
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
 		try {
 			fos = new FileOutputStream(out);
 			oos = new ObjectOutputStream(fos);
-			
+
 			oos.writeObject(instance);
 		} catch (Exception e) {
-				e.printStackTrace();
+			e.printStackTrace();
 		}
 		finally {
 			if(oos != null) {

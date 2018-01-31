@@ -4,6 +4,7 @@ package br.ufrpe.PlayKing.beans;
 import java.time.LocalDateTime;
 
 import br.ufrpe.PlayKing.dados.RepositorioAlbum;
+import br.ufrpe.PlayKing.dados.RepositorioUsuario;
 import br.ufrpe.PlayKing.exception.ElementoJaExisteException;
 import br.ufrpe.PlayKing.negocio.Fachada;
 import br.ufrpe.PlayKing.negocio.IFachada;
@@ -14,17 +15,9 @@ public class Teste {
 	public static void main(String []args) throws ElementoJaExisteException {
 		IFachada fachada = Fachada.getInstance();
 		
+	
 		
-		RepositorioAlbum repo = RepositorioAlbum.getInstance();
-		Artista a1 = new Artista("an", 10);
 		
-		PlayList p = new PlayList("1", null);
-		fachada.cadastrarElemento(p);
-		
-		fachada.cadastrarElemento(a1);	
-			repo.listarElementos();
-			
-			
 			
 			
 

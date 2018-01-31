@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="664.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="664.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.PlayKing.gui.TelaADMController">
    <children>
       <Separator layoutX="137.0" layoutY="195.0" prefHeight="8.0" prefWidth="526.0" />
       <Separator layoutX="135.0" layoutY="3.0" orientation="VERTICAL" prefHeight="473.0" prefWidth="5.0" />
@@ -23,7 +23,7 @@
                   <Image url="@../../../../../../../../../Music-icon.png" />
                </image>
             </ImageView>
-            <Button layoutX="62.0" layoutY="160.0" mnemonicParsing="false" text="Músicas">
+            <Button fx:id="btnMusicas" layoutX="62.0" layoutY="160.0" mnemonicParsing="false" onAction="#btnMusicaADM" text="Músicas">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
@@ -50,7 +50,7 @@
                   <Image url="@../../../../../../../../../music_folder_sound_album_archive_flat_icon-128.png" />
                </image>
             </ImageView>
-            <Button layoutX="80.0" layoutY="160.0" mnemonicParsing="false" text="Albúns">
+            <Button fx:id="btnAlbuns" layoutX="80.0" layoutY="160.0" mnemonicParsing="false" onAction="#btnAlbumADM" text="Albúns">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
@@ -63,7 +63,7 @@
                   <Image url="@../../../../../../../../../1608_-_Singer-128.png" />
                </image>
             </ImageView>
-            <Button layoutX="66.0" layoutY="190.0" mnemonicParsing="false" text="Artistas">
+            <Button fx:id="btnArtistas" layoutX="66.0" layoutY="190.0" mnemonicParsing="false" onAction="#btnArtistaADM" text="Artistas">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
@@ -100,13 +100,13 @@
                         <Image url="@../../../../../../../../../user-group-128.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="48.0" layoutY="160.0" mnemonicParsing="false" text="Usuários">
+                  <Button fx:id="btnUsuarios" layoutX="48.0" layoutY="160.0" mnemonicParsing="false" onAction="#btnUsuariosADM" text="Usuários">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font></Button>
                </children>
             </Pane>
-            <Button layoutX="16.0" layoutY="285.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="115.0" text="Sair">
+            <Button fx:id="btnSair" layoutX="16.0" layoutY="285.0" mnemonicParsing="false" onAction="#voltarLoginScreen" prefHeight="70.0" prefWidth="115.0" text="Sair">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font></Button>

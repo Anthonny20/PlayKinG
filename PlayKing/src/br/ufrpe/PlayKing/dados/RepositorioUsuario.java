@@ -20,17 +20,17 @@ public class RepositorioUsuario<T> extends RepositorioGenerico<Usuario>  {
 	 */
 	private static final long serialVersionUID = 7179081346017521884L;
 	private static RepositorioUsuario<Usuario> instance;
-	private ArrayList<Usuario> usuarios;
+	private List<Usuario> usuarios ;
 
 	public static RepositorioUsuario<Usuario> getInstance(){
 		if (instance==null) {
-			instance = new RepositorioUsuario<Usuario>();	
+			instance = lerArquivo();	
 
 		}return instance;
 	}
 
 	private RepositorioUsuario() {
-		this.usuarios = new ArrayList<>();
+		this.usuarios = this.elementos;
 	}
 
 

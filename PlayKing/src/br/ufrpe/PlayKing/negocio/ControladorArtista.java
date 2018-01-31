@@ -1,34 +1,35 @@
 package br.ufrpe.PlayKing.negocio;
 
-
 import java.util.List;
-
 
 import br.ufrpe.PlayKing.beans.Artista;
 import br.ufrpe.PlayKing.beans.Musica;
 import br.ufrpe.PlayKing.dados.IRepositorioGenerico;
 import br.ufrpe.PlayKing.dados.RepositorioArtista;
+import br.ufrpe.PlayKing.exception.ArtistaJaCadastradoException;
 import br.ufrpe.PlayKing.exception.ElementoJaExisteException;
 import br.ufrpe.PlayKing.exception.ElementoNaoExisteException;
+import br.ufrpe.PlayKing.exception.UsuarioJaCadastradoException;
 
-public class ControladorArtista implements IControladorArtista {
+public class ControladorArtista {
 
-	private IRepositorioGenerico<Artista> repoArtista;
-	private RepositorioArtista repo;
+	private IRepositorioGenerico<Artista> repositorio;
+	private RepositorioArtista<Artista> repoArtista;
 
+	
 	public ControladorArtista(IRepositorioGenerico<Artista> instancia) {
-
-		this.repoArtista = instancia;
-		this.repo = RepositorioArtista.getInstance();
-
+		
+		this.repositorio = instancia;
+		this.repoArtista = RepositorioArtista.getInstance();
 	}
-
-	@Override
+	
+	
 	public void removerElemento(Artista elemento)throws ElementoNaoExisteException{
 		try {
-			if(elemento !=null && this.repoArtista.existeElemento(elemento)) {
+			if(elemento !=null && this.repositorio.existeElemento(elemento)) {
 
-				this.repoArtista.removerElemento(elemento);
+				this.repositorio.removerElemento(elemento);
+				this.repositorio.salvarArquivo();
 
 			}else {
 				throw new ElementoNaoExisteException(elemento);
@@ -41,37 +42,37 @@ public class ControladorArtista implements IControladorArtista {
 
 	}
 
-	@Override
-	public List<Artista> listarElemento() {
-		return repoArtista.listarElementos();
+
+	public List<Artista> listarArtistas() {
+		return repositorio.listarElementos();
 	}
-	public List<Artista> listarArtista() {
-		return this.repoArtista.listarElementos();
-	}
+	
 
 
-	@Override
-	public void cadastrarElemento(Artista elemento)throws ElementoJaExisteException{
-		try {
-			if (elemento!=null && !this.repoArtista.existeElemento(elemento)) {
 
-				this.repoArtista.cadastrarElemento(elemento);
+	public void cadastrarElemento(Artista elemento)throws ElementoJaExisteException, ArtistaJaCadastradoException{
+		
+			if (elemento==null ) {
+				throw new IllegalArgumentException("Arguemnto inválido");
+				
+			}else if(!this.repositorio.existeElemento(elemento)) {
+
+				this.repositorio.cadastrarElemento(elemento);
+				this.repositorio.salvarArquivo();
 
 			}else {
-				throw new ElementoJaExisteException(elemento);
+				throw new ArtistaJaCadastradoException("Nome de Artista "+elemento.getNomeArtista()+" já cadastrado");
 			}
-		} catch (ElementoJaExisteException e) {
-			e.printStackTrace();
-		}
+		} 
 
 
-	}
-
-	@Override
+	
 	public void atualizarElemento(Artista elemento) throws ElementoNaoExisteException{
 		try {
-			if(elemento !=null && this.repoArtista.existeElemento(elemento)) {
-				this.repoArtista.atualizarElemento(elemento);
+			if(elemento !=null && this.repositorio.existeElemento(elemento)) {
+				
+				this.repositorio.atualizarElemento(elemento);
+				this.repositorio.salvarArquivo();
 			}else {
 				throw new ElementoNaoExisteException(elemento);
 			}
@@ -82,9 +83,9 @@ public class ControladorArtista implements IControladorArtista {
 
 	}
 
-	@Override
+
 	public boolean existeElemento(Artista elemento) {
-		return this.repoArtista.existeElemento(elemento);
+		return this.repositorio.existeElemento(elemento);
 	}
 
 	public void adicionarMusicaArtista(Artista artista, Musica musica) throws ElementoJaExisteException, ElementoNaoExisteException{
@@ -92,7 +93,8 @@ public class ControladorArtista implements IControladorArtista {
 		try {
 
 			if (artista!=null&& musica!=null) {
-				repo.adicionarMusicaArtista(artista, musica);
+				repoArtista.adicionarMusicaArtista(artista, musica);
+				repoArtista.salvarArquivo();
 			}else {
 				throw new ElementoNaoExisteException(artista);
 			}
@@ -100,5 +102,4 @@ public class ControladorArtista implements IControladorArtista {
 			e.printStackTrace();
 		}
 	}
-
 }

@@ -8,23 +8,24 @@ import br.ufrpe.PlayKing.dados.RepositorioMusica;
 import br.ufrpe.PlayKing.exception.ElementoJaExisteException;
 import br.ufrpe.PlayKing.exception.ElementoNaoExisteException;
 
-public class ControladorMusica implements IControladorMusica {
+public class ControladorMusica {
 	
-	private IRepositorioGenerico<Musica> repoMusica;
-	private RepositorioMusica repo;
+	private IRepositorioGenerico<Musica> repositorio;
+	private RepositorioMusica<Musica> repoMusica;
 	
 
 	public ControladorMusica(IRepositorioGenerico<Musica> instancia) {
-		this.repoMusica = instancia;
-		this.repo = RepositorioMusica.getInstance();
+		this.repositorio = instancia;
+		this.repoMusica = RepositorioMusica.getInstance();
 	}
 
-	@Override
+	
 	public void removerElemento(Musica musica) throws ElementoNaoExisteException {
 		try {
 
-			if (musica!= null && this.repoMusica.existeElemento(musica)) {
-				this.repoMusica.removerElemento(musica);
+			if (musica!= null && this.repositorio.existeElemento(musica)) {
+				this.repositorio.removerElemento(musica);
+				this.repositorio.salvarArquivo();
 			}
 			else {
 				throw new ElementoNaoExisteException(musica);
@@ -39,7 +40,7 @@ public class ControladorMusica implements IControladorMusica {
 		List<Musica> buscaLista = null;
 		try {
 			if (nome!= null ) {
-				buscaLista =  this.repo.buscarNome(nome);
+				buscaLista =  this.repoMusica.buscarNome(nome);
 			}
 
 			else {
@@ -53,19 +54,17 @@ public class ControladorMusica implements IControladorMusica {
 
 
 
-	public List<Musica> listarTodasMusicas() {
-		return repo.listarTodasMusicas();
-	}
-	@Override
-	public List<Musica> listarElemento() {
-		return repoMusica.listarElementos();
+	
+	
+	public List<Musica> listarMusicas() {
+		return repositorio.listarElementos();
 	}
 
-	@Override
+	
 	public void cadastrarElemento (Musica musica) throws ElementoJaExisteException{
 		try {
-			if (musica!= null && !repoMusica.existeElemento(musica)) {
-				this.repoMusica.cadastrarElemento(musica);
+			if (musica!= null && !repositorio.existeElemento(musica)) {
+				this.repositorio.cadastrarElemento(musica);
 				
 			}else {
 				throw new ElementoJaExisteException(musica);
@@ -81,11 +80,12 @@ public class ControladorMusica implements IControladorMusica {
 
 
 		}
-	@Override
+	
 	public void atualizarElemento(Musica musica) throws ElementoNaoExisteException{
 		try {
-			if(musica !=null && this.repoMusica.existeElemento(musica)) {
-				this.repoMusica.atualizarElemento(musica);
+			if(musica !=null && this.repositorio.existeElemento(musica)) {
+				this.repositorio.atualizarElemento(musica);
+				this.repositorio.salvarArquivo();
 			}else {
 				throw new ElementoNaoExisteException(musica);
 			}
@@ -98,8 +98,8 @@ public class ControladorMusica implements IControladorMusica {
 
 	}
 	
-	@Override
+
 	public boolean existeElemento(Musica musica) {
-		return this.repoMusica.existeElemento(musica);
+		return this.repositorio.existeElemento(musica);
 	}
 }

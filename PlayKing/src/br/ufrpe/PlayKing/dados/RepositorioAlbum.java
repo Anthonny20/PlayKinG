@@ -25,13 +25,13 @@ public class RepositorioAlbum<T> extends RepositorioGenerico<Album> implements S
 
 	public static RepositorioAlbum<Album> getInstance() {
 		if (instance == null) {
-			instance = new RepositorioAlbum<Album>();
+			instance = lerArquivo();
 
 		}return instance;
 	}
 
 	private RepositorioAlbum() {
-		this.albuns = this.elementos;
+		this.albuns = new ArrayList<>();
 	}
 
 	
@@ -40,6 +40,7 @@ public class RepositorioAlbum<T> extends RepositorioGenerico<Album> implements S
 			for (int i = 0; i < albuns.size(); i++) {
 					if (albuns.get(i).equals(album)) {
 						albuns.get(i).adicionarMusica(musica);
+						this.salvarArquivo();
 					}
 					
 			}
