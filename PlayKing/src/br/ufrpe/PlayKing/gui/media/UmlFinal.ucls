@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.2" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="br.ufrpe.PlayKing.dados.RepositorioGenerico" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/dados/RepositorioGenerico.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="209" x="1410" y="518"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="br.ufrpe.PlayKing.negocio.ControladorUsuario" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/negocio/ControladorUsuario.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="276" x="2601" y="518"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="br.ufrpe.PlayKing.exception.AlbumJaCadastradoException" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/exception/AlbumJaCadastradoException.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="206" x="346" y="-251"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="br.ufrpe.PlayKing.dados.RepositorioAlbum" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/dados/RepositorioAlbum.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="232" x="2585" y="1251"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="br.ufrpe.PlayKing.dados.RepositorioUsuario" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/dados/RepositorioUsuario.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="233" x="1973" y="1251"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="6" language="java" name="br.ufrpe.PlayKing.dados" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/dados" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="158" x="592" y="-251"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="7" language="java" name="br.ufrpe.PlayKing.exception" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/exception" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="179" x="790" y="-251"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="8" language="java" name="br.ufrpe.PlayKing.gui.TelaArquivoMusicaController" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/gui/TelaArquivoMusicaController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="187" x="1009" y="-251"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="br.ufrpe.PlayKing.negocio.ControladorArtista" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/negocio/ControladorArtista.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="266" x="1985" y="518"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="br.ufrpe.PlayKing.negocio.Fachada" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/negocio/Fachada.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="729" width="279" x="3236" y="-251"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="br.ufrpe.PlayKing.dados.RepositorioArtista" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/dados/RepositorioArtista.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="236" x="1410" y="1251"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="br.ufrpe.PlayKing.gui.MainScreenController" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/gui/MainScreenController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="243" x="4106" y="518"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="br.ufrpe.PlayKing.negocio.ControladorVendas" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/negocio/ControladorVendas.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="276" x="1669" y="518"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="14" language="java" name="br.ufrpe.PlayKing.gui" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/gui" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="140" x="1236" y="-251"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="15" language="java" name="br.ufrpe.PlayKing.gui.PlayerKinGController" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/gui/PlayerKinGController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="197" x="1416" y="-251"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="br.ufrpe.PlayKing.exception.ArtistaJaCadastradoException" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/exception/ArtistaJaCadastradoException.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="208" x="1653" y="-251"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="br.ufrpe.PlayKing.gui.MainTela" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/gui/MainTela.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="113" x="1901" y="-251"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="br.ufrpe.PlayKing.gui.TelaLoginController" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/gui/TelaLoginController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="206" x="3580" y="518"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="br.ufrpe.PlayKing.exception.UsuarioJaCadastradoException" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/exception/UsuarioJaCadastradoException.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="213" x="2054" y="-251"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="br.ufrpe.PlayKing.exception.ElementoJaExisteException" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/exception/ElementoJaExisteException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="195" x="2307" y="-251"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="br.ufrpe.PlayKing.gui.TelaADMController" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/gui/TelaADMController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="203" x="2542" y="-251"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="br.ufrpe.PlayKing.gui.TelaMusicaADMController" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/gui/TelaMusicaADMController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="405" width="240" x="3826" y="518"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="23" language="java" name="br.ufrpe.PlayKing.dados.IRepositorioGenerico" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/dados/IRepositorioGenerico.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="164" x="2867" y="1251"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="24" language="java" name="br.ufrpe.PlayKing.exception.ElementoNaoExisteException" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/exception/ElementoNaoExisteException.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="203" x="2785" y="-251"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="br.ufrpe.PlayKing.dados.RepositorioPlayList" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/dados/RepositorioPlayList.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="279" x="2256" y="1251"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="26" language="java" name="br.ufrpe.PlayKing.negocio.IFachada" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/negocio/IFachada.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="4188" y="94"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="27" language="java" name="br.ufrpe.PlayKing.dados.RepositorioVendas" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/dados/RepositorioVendas.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="271" x="1089" y="1251"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="br.ufrpe.PlayKing.gui.DashBoardController" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/gui/DashBoardController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="513" width="304" x="4370" y="-251"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="br.ufrpe.PlayKing.gui.TelaUsuarioADMController" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/gui/TelaUsuarioADMController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="236" x="4410" y="518"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="br.ufrpe.PlayKing.negocio.ControladorAlbum" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/negocio/ControladorAlbum.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="262" x="3236" y="518"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="br.ufrpe.PlayKing.gui.TelaArtistaADMController" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/gui/TelaArtistaADMController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="405" width="236" x="4686" y="518"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="br.ufrpe.PlayKing.dados.RepositorioMusica" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/dados/RepositorioMusica.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="227" x="1696" y="1251"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="33" language="java" name="br.ufrpe.PlayKing.gui.TelaAlbunsADMController" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/gui/TelaAlbunsADMController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="693" width="267" x="4962" y="518"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="34" language="java" name="br.ufrpe.PlayKing.negocio" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/negocio" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="168" x="3028" y="-251"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="35" language="java" name="br.ufrpe.PlayKing.negocio.ControladorMusica" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/negocio/ControladorMusica.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="270" x="2291" y="518"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="36" language="java" name="br.ufrpe.PlayKing.negocio.ControladorPlayList" project="PlayKing" 
+    file="/PlayKing/src/br/ufrpe/PlayKing/negocio/ControladorPlayList.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="279" x="2917" y="518"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="37">    
+    <end type="SOURCE" refId="35" navigable="false">      
+      <attribute id="38" name="repositorio"/>      
+      <multiplicity id="39" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="40">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="41" name="instance"/>      
+      <multiplicity id="42" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="43">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <association id="44">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="45" name="controlMusica"/>      
+      <multiplicity id="46" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="35" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="47">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="48" name="repoVendas"/>      
+      <multiplicity id="49" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="50">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="51" name="repositorio"/>      
+      <multiplicity id="52" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="53">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="54" name="fachada"/>      
+      <multiplicity id="55" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="56">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="57" name="instance"/>      
+      <multiplicity id="58" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="59">    
+    <end type="SOURCE" refId="35" navigable="false">      
+      <attribute id="60" name="repoMusica"/>      
+      <multiplicity id="61" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="62">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="63" name="instance"/>      
+      <multiplicity id="64" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="65">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="66" name="mc"/>      
+      <multiplicity id="67" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="68">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="69" name="fachada"/>      
+      <multiplicity id="70" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="71">    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="72" name="repositorio"/>      
+      <multiplicity id="73" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="74">    
+    <end type="SOURCE" refId="33" navigable="false">      
+      <attribute id="75" name="fachada"/>      
+      <multiplicity id="76" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="77">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="78" name="instance"/>      
+      <multiplicity id="79" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="80">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="23"/>  
+  </realization>  
+  <association id="81">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="82" name="repoArtista"/>      
+      <multiplicity id="83" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="84">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="85" name="repositorio"/>      
+      <multiplicity id="86" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="87">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="88" name="instance"/>      
+      <multiplicity id="89" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="90">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="91" name="controlUsuario"/>      
+      <multiplicity id="92" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="93">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <association id="94">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="95" name="fachada"/>      
+      <multiplicity id="96" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="97">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <association id="98">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="99" name="repoAlbum"/>      
+      <multiplicity id="100" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="101">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="102" name="controlPlayList"/>      
+      <multiplicity id="103" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="104">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <association id="105">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="106" name="repoUsuario"/>      
+      <multiplicity id="107" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="108">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="109" name="fachada"/>      
+      <multiplicity id="110" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="111">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="112" name="repositorio"/>      
+      <multiplicity id="113" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="114">    
+    <bendpoint x="3528" y="518"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="26"/>  
+  </realization>  
+  <association id="115">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="116" name="controlVendas"/>      
+      <multiplicity id="117" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="118">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="119" name="instance"/>      
+      <multiplicity id="120" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="121">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="122" name="controlAlbum"/>      
+      <multiplicity id="123" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="124">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="125" name="controlArtista"/>      
+      <multiplicity id="126" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="127">    
+    <bendpoint x="4379" y="518"/>    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="128" name="fachada"/>      
+      <multiplicity id="129" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="130">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="131" name="fachada"/>      
+      <multiplicity id="132" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="133">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="134" name="instance"/>      
+      <multiplicity id="135" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="136">    
+    <bendpoint x="3549" y="518"/>    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="137" name="instance"/>      
+      <multiplicity id="138" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="139">    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="140" name="repoPlayList"/>      
+      <multiplicity id="141" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="142">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <generalization id="143">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <association id="144">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="145" name="repositorio"/>      
+      <multiplicity id="146" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
